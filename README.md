@@ -1,2 +1,2 @@
-# stevenwithaphd.github.io
+# swaltonprof.github.io
 ...
