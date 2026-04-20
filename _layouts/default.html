@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | swalton.prof</title>
+    <style>
+        :root {
+            --bg-base: #f4f4f9;
+            --bg-surface: #ffffff;
+            --bg-hover: #e2e8f0;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --border-color: #cbd5e1;
+            --accent: #2c3e50;
+        }
+
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: var(--bg-base); color: var(--text-main); margin: 0; padding: 0; display: flex; justify-content: center; }
+        .layout { display: grid; grid-template-columns: 240px 1fr 300px; gap: 40px; max-width: 1400px; width: 100%; padding: 20px 40px; min-height: 100vh; }
+        
+        /* Sidebar Left */
+        .sidebar-left { display: flex; flex-direction: column; border-right: 1px solid var(--border-color); padding-right: 20px; }
+        .profile-section { text-align: center; margin-bottom: 40px; padding-top: 20px; }
+        .profile-img { width: 100px; height: 100px; border-radius: 50%; background-color: var(--bg-base); border: 2px solid var(--border-color); margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.8rem; }
+        .profile-section h2 { margin: 0 0 5px 0; font-size: 1.2rem; color: #1a252f; }
+        .profile-section p { margin: 0; color: var(--text-muted); font-size: 0.9rem; font-style: italic; }
+        
+        .nav-menu { list-style: none; padding: 0; margin: 0; }
+        .nav-menu li { margin-bottom: 5px; }
+        .nav-menu a { display: block; padding: 12px 15px; color: var(--text-muted); text-decoration: none; border-radius: 6px; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; }
+        .nav-menu a:hover, .nav-menu a.active { background-color: var(--bg-hover); color: var(--accent); font-weight: bold; }
+
+        /* Main Content */
+        .content { padding-top: 20px; }
+        .content-header { font-size: 1.5rem; margin-bottom: 30px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; color: #1a252f; }
+        .card { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 8px; padding: 25px; margin-bottom: 20px; transition: box-shadow 0.2s, border-color 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .card:hover { border-color: var(--accent); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .card h3 { margin: 0 0 10px 0; font-size: 1.3rem; color: var(--accent); }
+        .card p { color: var(--text-muted); line-height: 1.6; margin: 0 0 15px 0; font-size: 0.95rem; }
+        
+        /* Sidebar Right */
+        .sidebar-right { padding-top: 20px; }
+        .widget { margin-bottom: 40px; }
+        .widget h4 { margin: 0 0 15px 0; font-size: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; color: #1a252f; }
+        .recent-list { list-style: none; padding: 0; margin: 0; }
+        .recent-list li { margin-bottom: 12px; font-size: 0.9rem; }
+        .recent-list a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .recent-list a:hover { color: var(--accent); text-decoration: underline; }
+
+        @media (max-width: 1024px) { .layout { grid-template-columns: 240px 1fr; } .sidebar-right { display: none; } }
+        @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } .sidebar-left { border-right: none; border-bottom: 1px solid var(--border-color); margin-bottom: 20px; padding-bottom: 20px; } }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar-left">
+            <div class="profile-section">
+                <div class="profile-img">[Headshot]</div>
+                <h2>Steven Walton</h2>
+                <p>swalton.prof</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" class="{% if page.url == '/' %}active{% endif %}">HOME</a></li>
+                <li><a href="/courses.html" class="{% if page.url contains 'courses' or page.url contains 'osi-model' %}active{% endif %}">COURSES</a></li>
+                <li><a href="/syllabi.html" class="{% if page.url contains 'syllabi' %}active{% endif %}">SYLLABI</a></li>
+                <li><a href="/labs.html" class="{% if page.url contains 'labs' %}active{% endif %}">LAB ENVIRONMENTS</a></li>
+                <li><a href="/about.html" class="{% if page.url contains 'about' %}active{% endif %}">ABOUT</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            {{ content }}
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="widget">
+                <h4>Recently Updated</h4>
+                <ul class="recent-list">
+                    <li><a href="#">SOC Alert Fatigue Mitigation</a></li>
+                    <li><a href="#">GenAI Policy Templates (K-12)</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
