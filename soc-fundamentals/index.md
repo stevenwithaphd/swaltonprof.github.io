@@ -30,4 +30,4 @@ description: A breakdown of the SOC. We strip away the vendor marketing and exam
 <div class="card">
   <h3><a href="/soc-fundamentals/Module5.html" style="color: inherit; text-decoration: none;">Module 5: Tooling (Coming Soon)</h3>
   <p>Logging is an ouroboros, SOCs live and die by automation, SIEMs/SOARs contribute to acronym soup. But, you still need tools to effectively perform your job.</p>
-  </div>
+</div>
