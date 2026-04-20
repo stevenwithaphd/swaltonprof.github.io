@@ -1,6 +1,8 @@
 ---
 layout: default
-title: SOC Fundamentals
+title: SOC Fundamentals Syllabus
+date: 2026-04-20
+description: A breakdown of the SOC. We strip away the vendor marketing and examine the human-centric workflows.
 ---
 
 <div class="content-header">Course Syllabus: SOC Fundamentals</div>

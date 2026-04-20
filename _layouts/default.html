@@ -55,17 +55,29 @@
     <div class="layout">
         <aside class="sidebar-left">
             <div class="profile-section">
-                <div class="profile-img">[Headshot]</div>
                 <h2>Steven Walton</h2>
                 <p>swalton.prof</p>
             </div>
             <ul class="nav-menu">
                 <li><a href="/" class="{% if page.url == '/' %}active{% endif %}">HOME</a></li>
-                <li><a href="/courses.html" class="{% if page.url contains 'courses' or page.url contains 'osi-model' %}active{% endif %}">COURSES</a></li>
-                <li><a href="/syllabi.html" class="{% if page.url contains 'syllabi' %}active{% endif %}">SYLLABI</a></li>
-                <li><a href="/labs.html" class="{% if page.url contains 'labs' %}active{% endif %}">LAB ENVIRONMENTS</a></li>
-                <li><a href="/about.html" class="{% if page.url contains 'about' %}active{% endif %}">ABOUT</a></li>
-            </ul>
+                <li><a href="/soc-fundamentals/" class="{% if page.url contains 'soc-fundamentals' %}active{% endif %}">COURSES</a></li>
+                </ul>
+        </aside>
+
+        <main class="content">
+            {{ content }}
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="widget">
+                <h4>Recently Updated</h4>
+                <ul class="recent-list">
+                    {% assign recent_pages = site.pages | where_exp: "item", "item.date != nil" | sort: "date" | reverse %}
+                    {% for p in recent_pages limit: 5 %}
+                        <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
         </aside>
 
         <main class="content">
