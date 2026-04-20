@@ -25,7 +25,7 @@ title: Home
   
   <ul style="list-style: none; padding-left: 0;">
     {% assign recent_modules = site.pages | where_exp: "item", "item.date != nil" | sort: "date" | reverse %}
-    {% for module in recent_modules limit: 3 %}
+    {% for module in recent_modules limit: 6 %}
     <li style="margin-bottom: 15px; border-left: 3px solid var(--border-color); padding-left: 15px;">
       <a href="{{ module.url }}" style="color: inherit; text-decoration: none; font-weight: bold; font-size: 1.05rem;">{{ module.title }}</a>
       <br>
