@@ -1,7 +1,6 @@
 ---
 layout: default
 title: SOC Fundamentals Overview
-date: 2026-04-20
 description: A breakdown of the SOC. We strip away the vendor marketing and examine the human-centric workflows.
 ---
 

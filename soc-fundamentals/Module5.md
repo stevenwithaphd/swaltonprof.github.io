@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Module 5 - Tooling
-date: 2026-04-20
+#date: 2026-04-20
 description: Logging is an ouroboros, SOCs live and die by automation.
 ---
 
