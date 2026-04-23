@@ -5,4 +5,4 @@ date: 2026-04-24
 description: Logging is an ouroboros, SOCs live and die by automation.
 ---
 
-<div class="content-header">Module 5: Tooling</div>
+<div class="card" markdown="1">Module 5: Tooling</div>
