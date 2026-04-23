@@ -13,7 +13,7 @@ description: Welcome to Rivendell, Mr Anderson
 
 Forget the pristine, glowing screens you see in movie hacking scenes or vendor showrooms. A real Security Operations Center (SOC) is where the rubber meets the road. It bridges physical and logical boundaries. In the real world, your analysts are patching together aging legacy systems and modern cloud infrastructure. Budgets and daily operational fires dictate the final design, not slick marketing promises. 
 
-If you *do* want to see what a highly polished, heavily funded SOC looks like, you can watch Palo Alto's quasi-promotional webinars. They offer these live from time to time, but here is an 18-minute look at their Episode 1 content: [Go Inside Palo Alto's SOC | This is How We Do It Ep. 1](https://www.youtube.com/watch?v=oAQz_BTFkbU)
+If you *do* want to see what a highly polished, heavily funded SOC looks like, you can watch Palo Alto's quasi-promotional webinars. They offer these live from time to time, but here is an 18-minute look at their Episode 1 content: [Go Inside Palo Alto's SOC \| This is How We Do It Ep. 1](https://www.youtube.com/watch?v=oAQz_BTFkbU)
 
 ## The Emergence of a SOC
 
