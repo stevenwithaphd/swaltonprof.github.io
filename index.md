@@ -29,7 +29,7 @@ This site is for educational content. For other topics, please route to the appr
 The most recent instructional content pushed to the repository:
 
 <ul style="list-style: none; padding-left: 0;">
-  {% assign recent_modules = site.pages | where_exp: "item", "item.date != nil" | sort: "date" | reverse %}
+  {% assign recent_modules = site.html_pages | where_exp: "item", "item.date" | sort: "date" | reverse %}
   {% for module in recent_modules limit: 6 %}
   <li style="margin-bottom: 15px; border-left: 3px solid var(--border-color); padding-left: 15px;">
     <a href="{{ module.url }}" style="color: inherit; text-decoration: none; font-weight: bold; font-size: 1.05rem;">{{ module.title }}</a>

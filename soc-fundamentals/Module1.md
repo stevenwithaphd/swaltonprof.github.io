@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Module 1 - Introduction to the SOC
-date: 2026-04-222
+date: 2026-04-22
 description: Welcome to Rivendell, Mr Anderson
 ---
 
