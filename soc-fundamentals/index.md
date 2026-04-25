@@ -24,7 +24,7 @@ The Endpoint (Windows/Mac/Linux) is no longer within the confines of the corpora
 
 <div class="card" markdown="1">
 
-### [Module 3: Mobile Defense (Coming Soon)](/soc-fundamentals/Module3.html)
+### [Module 3: Mobile Defense](/soc-fundamentals/Module3.html)
 
 Cellphones, Tablets, MDM and BYOD. It isn't enough to just protect what you think you need to protect, mobile devices are now in scope!
 
