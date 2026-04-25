@@ -8,7 +8,7 @@ description: A breakdown of the SOC. We strip away the vendor marketing and exam
 
 <div class="card" markdown="1">
 
-### [Module 1: Introduction to the SOC (Coming Soon)](/soc-fundamentals/Module1.html)
+### [Module 1: Introduction to the SOC](/soc-fundamentals/Module1.html)
 
 What even is a SOC? What is the day-to-day of a SOC like?
 
