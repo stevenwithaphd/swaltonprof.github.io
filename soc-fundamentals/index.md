@@ -16,7 +16,7 @@ What even is a SOC? What is the day-to-day of a SOC like?
 
 <div class="card" markdown="1">
 
-### [Module 2: Endpoint Defense (Coming Soon)](/soc-fundamentals/Module2.html)
+### [Module 2: Endpoint Defense (In Progress)](/soc-fundamentals/Module2.html)
 
 The Endpoint (Windows/Mac/Linux) is no longer within the confines of the corporate network. How do you keep it protected?
 
