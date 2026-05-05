@@ -10,7 +10,13 @@ description: The Endpoint is no longer within the confines of the corporate netw
 <div class="card" markdown="1">
 
 # What is Endpoint Defense?
-Welcome to Module 2. This section is under active development. Below is a preview of the operational realities and controls we will cover.
+*Welcome to Module 2. This section is under active development. Below is a preview of the operational realities and controls we will cover.*
+
+Modern work destroys the traditional network perimeter. Users access corporate data from remote locations. Attackers target the endpoint directly. You must defend laptops, mobile devices, and servers.
+
+Limited budgets restrict complete asset visibility. Security controls generate friction with end users. You must implement baseline defenses regardless of these complaints. 
+
+Unmanaged endpoints introduce severe operational risks. Attackers steal credentials from compromised devices. They deploy ransomware across the organization. This failure stops business operations completely.
 
 * TOC
 {:toc}
