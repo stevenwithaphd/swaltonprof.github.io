@@ -10,15 +10,35 @@ description: The Endpoint is no longer within the confines of the corporate netw
 <div class="card" markdown="1">
 
 # What is Endpoint Defense?
-
+Welcome to Module 2. This section is under active development. Below is a preview of the operational realities and controls we will cover.
 
 * TOC
 {:toc}
 
-# Windows
+## 1. The Endpoint Baseline
+We define the modern endpoint and apply CIS Controls 1 and 2 for hardware and software inventory. Unmanaged devices introduce severe consequences to the network, yet budget limitations restrict complete asset visibility. We acknowledge this reality. 
 
-# Mac
+## 2. Endpoint Detection and Response (EDR)
+We define actual EDR functions. We ignore vendor marketing promises. 
+* **Windows:** Windows generates high alert volumes. You must monitor the registry to catch complex malware. Windows Server and Domain Controllers exist here as well. Entire books can be written about GPO and how they support proper security of Windows devices.
+* **macOS:** Apple hardware gives a false sense of security. These environments require specific Mobile Device Management restrictions.
+* **Linux:** Linux servers require stability and high uptime. We explain eBPF for kernel-level visibility. eBPF provides monitoring without causing production system crashes. While you don't normally think of Linux and "endpoint" together, it is a fundamental reality.
 
-# Linux
+## 3. Attack Surface Reduction
+We shrink the available targets for attackers. 
+* **Host Firewalls:** Host firewalls block lateral movement across all operating systems. Enforcing strict rules here can provide easy wins.
+* **Application Control:** You must restrict executable execution. We cover AppLocker and Airlock specifically for Windows environments.
+* **Software Inventory:** Software inventory identifies unpatched or unauthorized applications. 
+* **USB Control:** USB control restricts physical data exfiltration. It stops external malware staging.
 
-</div>
+## 4. Endpoint Privilege Management
+Access control procedures guarantee system access follows the concept of least privilege. You must revoke local administrator permissions. This stops malicious users from exploiting systems with poor security controls. This operational requirement generates friction with staff.
+
+## 5. Phishing and The Human Firewall
+Users click malicious links. This is an operational reality. Phishing directly bypasses technical controls. Phishing campaigns lead to credential theft and initial endpoint compromise. Security training mitigates risk. It does not cure human error.
+
+## 6. Mobile Devices and BYOD
+The modern endpoint includes mobile devices and BYOD culture. Employees access data on personal phones. We require Mobile Device Management profiles for access. Unmanaged phones lead to data exfiltration and credential theft. 
+
+## 7. Vulnerability and Patch Management
+Vulnerability management activities uncover weaknesses and ensure proper remediation. Software inventory only identifies the applications. You must patch identified vulnerabilities immediately. Attackers scan for unpatched software automatically.
