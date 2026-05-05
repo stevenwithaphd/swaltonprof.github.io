@@ -9,9 +9,9 @@ description: The Endpoint is no longer within the confines of the corporate netw
 
 <div class="card" markdown="1">
 
-*Welcome to Module 2. This section is under active development. Below is a preview of the operational realities and controls we will cover.*
-
 # What is Endpoint Defense?
+
+*Welcome to Module 2. This section is under active development. Below is a preview of the operational realities and controls we will cover.*
 
 Modern work destroys the traditional network perimeter. Users access corporate data from remote locations and attackers target the endpoint directly. Defneders must monitor and protect desktops, laptops, mobile devices, servers, and basically anything that can run code or be exploited by a bad actor.
 
