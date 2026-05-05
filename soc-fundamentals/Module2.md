@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Module 2 - Endpoint Defense
-date: 2026-5-5
+date: 2026-05-05
 description: The Endpoint is no longer within the confines of the corporate network. How do you keep it protected?
 ---
 
