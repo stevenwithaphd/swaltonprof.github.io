@@ -9,14 +9,17 @@ description: The Endpoint is no longer within the confines of the corporate netw
 
 <div class="card" markdown="1">
 
-# What is Endpoint Defense?
 *Welcome to Module 2. This section is under active development. Below is a preview of the operational realities and controls we will cover.*
 
-Modern work destroys the traditional network perimeter. Users access corporate data from remote locations. Attackers target the endpoint directly. You must defend laptops, mobile devices, and servers.
+# What is Endpoint Defense?
 
-Limited budgets restrict complete asset visibility. Security controls generate friction with end users. You must implement baseline defenses regardless of these complaints. 
+Modern work destroys the traditional network perimeter. Users access corporate data from remote locations and attackers target the endpoint directly. Defneders must monitor and protect desktops, laptops, mobile devices, servers, and basically anything that can run code or be exploited by a bad actor.
 
-Unmanaged endpoints introduce severe operational risks. Attackers steal credentials from compromised devices. They deploy ransomware across the organization. This failure stops business operations completely.
+Limited budgets restrict complete asset visibility while security controls generate friction with end users who want to use their work device with the same level of autonmy that enjoy on their personal devices. The CISO must ensure baseline defenses exist in alignment with business risk tolerance and security budget, regardless of user (and even some IT admins) complaints. The relative noise in a SOC can be greatly reduced by a robust security framework, while the ability to dig into what alerts do exist is eased by proper deployment of a solid security stack.
+
+Unmanaged endpoints introduce severe operational risks, permitting attackers a chance to steal credentials from these easily compromised devices. If unmanaged devices are permitted onto a secure network, or if network segmentation doesn't exist and that unmanaged gains access as a "guest/BYOD" device, a bad actor can now deploy ransomware across the organization. This failure stops business operations completely.
+
+Endpoint defense is deep, there are many terms and an entire book can be written about it, summarily, for defenders within a SOC they should focus on understanding how Windows, Mac, and Linux operate from a "power user" perspective in order to quickly navigate alerts they may receive from their various tooling. 
 
 * TOC
 {:toc}
