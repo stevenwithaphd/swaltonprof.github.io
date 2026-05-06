@@ -11,15 +11,6 @@ title: Home
 
 Welcome to my academic and educational repository. Please select **COURSES** from the left navigation menu to review the available instructional materials.
 
-<hr style="border: 0; border-top: 1px solid var(--border-color); margin: 20px 0;">
-
-### External Routing
-
-This site is for educational content. For other topics, please route to the appropriate external sites:
-
-* **Professional & Consulting:** [stevenwitha.phd](https://stevenwitha.phd)
-* **The Tech Sandbox:** [swalton.tech](https://swalton.tech)
-
 </div>
 
 <div class="card" markdown="1">
