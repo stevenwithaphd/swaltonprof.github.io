@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Module 3 - Mobile Defense
-#date: 2026-04-20
+date: 2026-05-07
 description: Cellphones, Tablets, MDM and BYOD. Mobile devices are now in scope!
 ---
 
-<div class="card" markdown="1">Module 3: Mobile Defense</div>
+<div class="content-header">Module 3: Mobile Defense</div>
 
 <div class="card" markdown="1">
 
@@ -25,9 +25,7 @@ The most secure operational choice is always providing corporate-owned hardware.
 Because the SOC lacks deep process-level visibility on personal mobile devices, IT operations must enforce strict barrier controls before granting network access:
 
 * **Authentication and Biometrics:** A device must not be allowed to sync corporate data unless it enforces a strong, alphanumeric passcode backed by biometric authentication (FaceID or fingerprint).
-
 * **Compromise Detection:** The MDM must actively check the device state upon connection. If a user connects with a "jailbroken" iOS device or a "rooted" Android phone, the system must automatically revoke access and wipe the corporate container, as the underlying operating system security has been intentionally bypassed.
-
 * **Conditional Access:** If an organization permits unmanaged BYOD devices, security policies should restrict the user to web-only access. They can view their email in a browser, but they cannot download attachments directly to their unmanaged, potentially compromised local storage.
 
 ## Service-Level Access Controls

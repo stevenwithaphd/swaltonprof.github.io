@@ -16,7 +16,7 @@ What even is a SOC? What is the day-to-day of a SOC like?
 
 <div class="card" markdown="1">
 
-### [Module 2: Endpoint Defense](/soc-fundamentals/Module2.html)
+### [Module 2: Endpoint Defense (Drafted)](/soc-fundamentals/Module2.html)
 
 The Endpoint (Windows/Mac/Linux) is no longer within the confines of the corporate network. How do you keep it protected?
 
@@ -24,7 +24,7 @@ The Endpoint (Windows/Mac/Linux) is no longer within the confines of the corpora
 
 <div class="card" markdown="1">
 
-### [Module 3: Mobile Defense (In Progress)](/soc-fundamentals/Module3.html)
+### [Module 3: Mobile Defense (Drafted)](/soc-fundamentals/Module3.html)
 
 Cellphones, Tablets, MDM and BYOD. It isn't enough to just protect what you think you need to protect, mobile devices are now in scope!
 
