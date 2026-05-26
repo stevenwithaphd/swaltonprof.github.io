@@ -32,7 +32,7 @@ Cellphones, Tablets, MDM and BYOD. It isn't enough to just protect what you thin
 
 <div class="card" markdown="1">
 
-### [Module 4: Network Defense (Coming Soon)](/soc-fundamentals/Module4.html)
+### [Module 4: Network Defense (WIP)](/soc-fundamentals/Module4.html)
 
 While not strictly true... Looking at you Stuxnet... All things flow across the network and thus you should be very familiar with networking concepts :D.
 
