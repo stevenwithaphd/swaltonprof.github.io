@@ -35,7 +35,7 @@ This might seem like a rant, but the reality of a SOC lies somewhere in that mes
 
 ## Physical Architecture
 
-Physical location varies heavily by organizational model. A massive enterprise might utilize a dedicated, secure office environment. Other organizations (such as the one I currently manage) may operate entirely remote security teams. MSSPs frequently position the SOC as their flagship offering, integrating dedicated engineers, architects, and consultants to support the core analysts. They often run auxiliary services like Incident Response (IR), digital forensics, or Virtual CISO (vCISO) offerings alongside the central SOC. 
+Physical location varies heavily by organizational model. A massive enterprise might utilize a dedicated, secure office environment. Other organizations may operate entirely remote security teams. MSSPs frequently position the SOC as their flagship offering, integrating dedicated engineers, architects, and consultants to support the core analysts. They often run auxiliary services like Incident Response (IR), digital forensics, or Virtual CISO (vCISO) offerings alongside the central SOC. 
 
 Every operational model requires central IT infrastructure. Analysts rely on physical data centers or cloud-hosted environments to manage continuous logging and tooling. The physical zip code of the personnel does not dictate where the telemetry data lives, especially when the team or company is globally dispersed.
 
