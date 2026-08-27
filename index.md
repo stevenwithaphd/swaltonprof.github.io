@@ -7,9 +7,12 @@ title: Home
 
 <div class="card" markdown="1">
 
-### Hello World!
+### Welcome & Overview
 
-Welcome to my academic and educational repository. Please select **COURSES** from the left navigation menu to review the available instructional materials.
+Welcome to my  educational repository. Select a course from the navigation menu on the side or explore the links below:
+
+* **[SOC Fundamentals](/soc-fundamentals/)**: Deconstructing the Security Operations Center, stripping away vendor marketing to explore human-centric workflows, architectures, and enterprise defense reality.
+* **[GenAI for Tinkerers](/genai-for-tinkerers/)**: Applied Generative AI & Autonomous Agent Architecture, building deterministic harnesses around non-deterministic engines for the IT Generalist.
 
 </div>
 
