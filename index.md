@@ -47,9 +47,9 @@ Bridging the gap between theoretical AI computer science and real-world IT syste
 
 <div class="card" markdown="1">
 
-### Recent Curriculum Updates
+### Recent Updates
 
-The latest instructional modules, revisions, and laboratory exercises added to the repository:
+The latest content added to the repository:
 
 <div style="margin-top: 15px;">
   {% assign recent_modules = site.html_pages | where_exp: "item", "item.date" | sort: "date" | reverse %}
