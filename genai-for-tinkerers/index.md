@@ -16,9 +16,9 @@ Strip away the vendor hype: understand probabilistic token prediction, context b
 
 <div class="card" markdown="1">
 
-### [Module 2: Grounded GenA! Usage: NotebookLM & Gems (Coming Soon)](/genai-for-tinkerers/Module2.html)
+### [Module 2: Grounded GenAI Usage: NotebookLM & Gems (Coming Soon)](/genai-for-tinkerers/Module2.html)
 
-Moving from unconstrained open-web guessing to closed-domain grounding. Build structured 5-Step YAML system instructions and automated SLED threat advisory reporting.
+Moving from unconstrained open-web interaction to more targeted interactions and outcomes. Build structured 5-Step YAML system instructions and see how RAG and GenAI can truly help to expedite data processing and learning.
 
 </div>
 
@@ -26,7 +26,7 @@ Moving from unconstrained open-web guessing to closed-domain grounding. Build st
 
 ### [Module 3: Agentic IDEs & AI Pair Programming (Coming Soon)](/genai-for-tinkerers/Module3.html)
 
-Moving from reactive autocomplete to proactive autonomous agent loops in modern IDEs. Build custom deterministic skills, execute planning workflows, and wire in MCP sidecars.
+Moving from reactive autocomplete and lots of copy/pasting to autonomous agent loops in modern IDEs. Build custom deterministic skills, execute planning workflows, and learn how to free up time to do more important things like learning more, or even taking a break.
 
 </div>
 
@@ -34,7 +34,7 @@ Moving from reactive autocomplete to proactive autonomous agent loops in modern 
 
 ### [Module 4: Local Open-Weight Inference & Hardware Architecture (Coming Soon)](/genai-for-tinkerers/Module4.html)
 
-Taking full control of your inference stack. Profile VRAM math, navigate GGUF quantization, and spin up private OpenAI-compatible REST server endpoints with LM Studio.
+Taking full control of your inference stack. Profile VRAM math, navigate GGUF quantization, and spin up private OpenAI-compatible REST server endpoints with LM Studio or Ollama.
 
 </div>
 
@@ -42,7 +42,7 @@ Taking full control of your inference stack. Profile VRAM math, navigate GGUF qu
 
 ### [Module 5: Custom Autonomous Agent Harnesses & Tool Runners (Coming Soon)](/genai-for-tinkerers/Module5.html)
 
-Building execution harnesses with Ollama and PowerShell/Python tool runners. Enforce deterministic API contracts and live Human-in-the-Loop (HITL) authorization gates.
+Building harnesses with Ollama and PowerShell/Python tool runners. Maximize the capabilities of an on-device model via targeted skills and constraints that you can have near full control over.
 
 </div>
 
@@ -50,22 +50,22 @@ Building execution harnesses with Ollama and PowerShell/Python tool runners. Enf
 
 ### [Module 6: Enterprise Cognitive Memory & Hybrid RAG Architecture (Coming Soon)](/genai-for-tinkerers/Module6.html)
 
-Constructing persistent 4-tier cognitive memory engines. Combine SQLite WAL Full-Text Search (FTS5) with vector embeddings, Reciprocal Rank Fusion (RRF), and reflection loops.
+Constructing persistent memory engines and your own personal GenAI solution to continue driving the benefits of GenAI offline.
 
 </div>
 
 <div class="card" markdown="1">
 
-### [Module 7: AI-Augmented SOC Operations & Threat Defense (Coming Soon)](/genai-for-tinkerers/Module7.html)
+### [Module 7: AI-Augmented Workflows & Automation (Coming Soon)](/genai-for-tinkerers/Module7.html)
 
-Putting agentic harnesses on the cyber defense front lines. Streamline Sysmon and EDR log triaging while building multi-layer Prompt Guard circuit breakers against injection attacks.
+Explore ways to turn everything you have created thus far into an agentic agent that can help lighten every day tasks and maybe one day, when you need it,  help you with much more critical tasks.  
 
 </div>
 
 <div class="card" markdown="1">
 
-### [Module 8: Enterprise Capstone, Governance & Course Wrap-Up (Coming Soon)](/genai-for-tinkerers/Module8.html)
+### [Module 8: Capstone: Enterprise AI Agent & Course Wrap-Up (Coming Soon)](/genai-for-tinkerers/Module8.html)
 
-The final proving ground: deploy an air-gapped autonomous SOC copilot defense simulation, navigate enterprise AI governance, and conduct an ethical retrospective.
+The final proving ground: Bring it all together and explore documenting it, writing up your own journey, and developing a plan to either integrate in your personal life or make a pitch at work.
 
 </div>
