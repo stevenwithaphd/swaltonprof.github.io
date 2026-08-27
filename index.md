@@ -11,8 +11,8 @@ title: Home
 
 Welcome to my  educational repository. Select a course from the navigation menu on the side or explore the links below:
 
-* **[SOC Fundamentals](/soc-fundamentals/)**: Deconstructing the Security Operations Center, stripping away vendor marketing to explore human-centric workflows, architectures, and enterprise defense reality.
-* **[GenAI for Tinkerers](/genai-for-tinkerers/)**: Applied Generative AI & Autonomous Agent Architecture, building deterministic harnesses around non-deterministic engines for the IT Generalist.
+* **[SOC Fundamentals](/soc-fundamentals/)**: The realities of the Security Operations Center, stripping away vendor marketing to explore human-centric workflows, architectures, and blue team defense.
+* **[GenAI for Tinkerers](/genai-for-tinkerers/)**: Applied GenAI usage for practical purposes, from understanding the fundamentals of how it works to building deterministic harnesses around non-deterministic engines for the IT Generalist and tinkerer alike.
 
 </div>
 
