@@ -7,6 +7,14 @@ description: Welcome to Rivendell, Mr Anderson.
 
 <div class="content-header">Module 1: Introduction to the SOC</div>
 
+<div class="breadcrumbs">
+  <a href="/">Home</a>
+  <span class="separator">/</span>
+  <a href="/soc-fundamentals/">SOC Fundamentals</a>
+  <span class="separator">/</span>
+  <span class="current">Module 1</span>
+</div>
+
 <div class="card" markdown="1">
 
 ![Module 1: Introduction to the SOC](/soc-fundamentals/images/banner_module1.jpg){: style="display: block; width: 100%; max-width: 900px; margin: 0 auto 1.75rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.25);" }
@@ -341,3 +349,16 @@ This module contains approximately twenty pages of technical documentation. Gene
 * **Study Guides:** Instruct the AI to generate slide decks or executive summaries from the source material. Review these condensed formats to memorize operational timeframes and role hierarchies.
 
 Gemini 3.1 Pro generated this section entirely. Steven Walton requested this addition and provided the context of the complete module.
+
+<div class="module-nav">
+  <a href="/soc-fundamentals/Module0.html" class="module-nav-link prev">
+    <span class="module-nav-label">Previous Module</span>
+    <span class="module-nav-title">← Module 0: Primer & Philosophy</span>
+  </a>
+  <a href="/soc-fundamentals/Module2.html" class="module-nav-link next">
+    <span class="module-nav-label">Next Module</span>
+    <span class="module-nav-title">Module 2: Endpoint Defense →</span>
+  </a>
+</div>
+
+</div>

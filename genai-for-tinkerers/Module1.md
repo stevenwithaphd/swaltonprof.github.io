@@ -7,6 +7,14 @@ description: "I don't know what half these relays do, but banging on the dashboa
 
 <div class="content-header">Module 1: Foundational GenAI for the Tinkerer</div>
 
+<div class="breadcrumbs">
+  <a href="/">Home</a>
+  <span class="separator">/</span>
+  <a href="/genai-for-tinkerers/">GenAI for Tinkerers</a>
+  <span class="separator">/</span>
+  <span class="current">Module 1</span>
+</div>
+
 <div class="card" markdown="1">
 
 # Foundational Concepts
@@ -152,7 +160,7 @@ While this grants the model an expansive general vocabulary, it also means the e
 This creates severe operational and ethical hazards in enterprise environments:
 * **High-Stakes Evaluation Trap**: Using a raw, ungrounded LLM to automate resume screening, loan approvals, or disciplinary reviews without strict human oversight is both legally dangerous and fundamentally flawed. The model will naturally replicate historical human prejudices embedded in historical hiring text.
 * **Satirical Ingestion Hazard**: When models digest internet content without semantic validation, satire is ingested as factual truth. Google's AI Overview famously advised search users to *"add non-toxic glue to pizza sauce to prevent cheese sliding"*, directly reciting a satirical comment posted on Reddit over a decade earlier.
-* **Enterprise Clean-Room & Indemnity (IBM Granite)**: For regulated organizations (finance, healthcare, government) that cannot risk copyright infringement, poisoned public web data, or opaque licensing, enterprise architectures leverage models like **IBM Granite**. Granite models are trained on rigorously curated, enterprise-grade datasets (spanning finance, law, code, and science) with full data provenance disclosure—scoring among the highest on the [Stanford CRFM Foundation Model Transparency Index (FMTI)](https://crfm.stanford.edu/fmti/)—backed by contractual intellectual property (IP) indemnification that shields enterprise clients from third-party copyright claims ([IBM Newsroom, 2023](https://newsroom.ibm.com/2023-09-28-IBM-Announces-Availability-of-watsonx-Granite-Model-Series,-Client-Protections-for-IBM-watsonx-Models)).
+* **Enterprise Models & Indemnification (IBM Granite)**: For regulated organizations (finance, healthcare, government) that cannot risk copyright infringement, poisoned public web data, or opaque licensing, enterprise architectures leverage models like **IBM Granite**. Granite models are trained on rigorously curated, enterprise-grade datasets (spanning finance, law, code, and science) with full data provenance disclosure—scoring among the highest on the [Stanford CRFM Foundation Model Transparency Index (FMTI)](https://crfm.stanford.edu/fmti/)—backed by contractual intellectual property (IP) indemnification that shields enterprise clients from third-party copyright claims ([IBM Newsroom, 2023](https://newsroom.ibm.com/2023-09-28-IBM-Announces-Availability-of-watsonx-Granite-Model-Series,-Client-Protections-for-IBM-watsonx-Models)).
 
 ## Tokenization Blind Spots & The Rock Crawler Principle
 
@@ -432,5 +440,16 @@ For context, average human reading speed is roughly 8 tokens per second (t/s), s
 2. What are the specific security and operational tradeoffs of using JSON versus XML versus Markdown when formatting system prompts and tool outputs?
 3. How can an enterprise harness secretly hit memory compression walls even when operating within an advertised 1-Million token context window?
 4. In what ways can an IT generalist use Generative AI to expand their technical understanding of unfamiliar systems while still maintaining healthy skepticism?
+
+<div class="module-nav">
+  <a href="/genai-for-tinkerers/" class="module-nav-link prev">
+    <span class="module-nav-label">Course Overview</span>
+    <span class="module-nav-title">← Course Syllabus</span>
+  </a>
+  <a href="/genai-for-tinkerers/Module2.html" class="module-nav-link next">
+    <span class="module-nav-label">Next Module</span>
+    <span class="module-nav-title">Module 2: Grounded GenAI & Gems →</span>
+  </a>
+</div>
 
 </div>
