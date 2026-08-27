@@ -46,7 +46,7 @@ In modern engineering, Computer Science and IT Operations mirror the dynamic bet
 
 An experienced mechanic doesn't need a PhD in metallurgy or petroleum chemistry to swap a crate motor, weld a custom roll cage, wire a transmission harness, and ultimately build a demolition derby rig or custom off-roader. Similarly, as an IT or Cybersecurity generalist, you do not need to invent new models or neural architectures to build, integrate, and secure high-performance agentic AI systems.
 
-![The Agentic Vehicle Architecture Blueprint](./images/agentic_vehicle_blueprint.jpg)
+![The Agentic Vehicle Architecture Blueprint](./images/agentic_vehicle_blueprint.jpg){: style="display: block; width: 100%; max-width: 900px; margin: 0 auto 1.75rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.25);" }
 
 ### Core Principles for the AI Mechanic
 

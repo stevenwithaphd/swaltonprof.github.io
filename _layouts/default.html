@@ -34,12 +34,15 @@
         .nav-menu a:hover, .nav-menu a.active { background-color: var(--bg-hover); color: var(--accent); font-weight: bold; }
 
         /* Main Content */
-        .content { padding-top: 20px; }
+        .content { padding-top: 20px; min-width: 0; }
         .content-header { font-size: 1.5rem; margin-bottom: 30px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; color: #1a252f; }
-        .card { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 8px; padding: 25px; margin-bottom: 20px; transition: box-shadow 0.2s, border-color 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .card { background-color: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 8px; padding: 25px; margin-bottom: 20px; transition: box-shadow 0.2s, border-color 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.05); overflow-wrap: break-word; }
         .card:hover { border-color: var(--accent); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         .card h3 { margin: 0 0 10px 0; font-size: 1.3rem; color: var(--accent); }
         .card p { color: var(--text-muted); line-height: 1.6; margin: 0 0 15px 0; font-size: 0.95rem; }
+        .card img { max-width: 100%; height: auto; }
+        .card pre { overflow-x: auto; max-width: 100%; }
+        .card table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; overflow-x: auto; display: block; }
 
         @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } .sidebar-left { border-right: none; border-bottom: 1px solid var(--border-color); margin-bottom: 20px; padding-bottom: 20px; } }
     </style>
