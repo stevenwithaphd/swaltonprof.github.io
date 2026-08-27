@@ -18,10 +18,9 @@ Wherever you are at in your career, if you believe in understanding how things w
 
 <div class="card" markdown="1">
 
-<span class="badge badge-blue">Active Course</span>
+<span class="badge badge-blue">Completed Course</span>
 <span class="badge badge-teal">6 Modules</span>
 <span class="badge badge-slate">Blue Team Defense</span>
-<span class="badge badge-amber">Hands-on Labs</span>
 
 ### [SOC Fundamentals](/soc-fundamentals/)
 
@@ -33,10 +32,10 @@ An honest look at the realities of modern Security Operations Centers. Move past
 
 <div class="card" markdown="1">
 
-<span class="badge badge-purple">New Course</span>
+<span class="badge badge-purple">WIP Course</span>
 <span class="badge badge-teal">8 Modules</span>
-<span class="badge badge-blue">Local Models & GGUF</span>
-<span class="badge badge-amber">Agentic Harnesses</span>
+<span class="badge badge-green">GenAI</span>
+<span class="badge badge-amber">Lab Assignments</span>
 
 ### [GenAI for Tinkerers](/genai-for-tinkerers/)
 
