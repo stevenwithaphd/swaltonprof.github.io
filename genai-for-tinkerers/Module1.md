@@ -135,7 +135,12 @@ This vector attention mechanism is the beating heart of the **Transformer** arch
 At runtime, an LLM performs one foundational calculation over and over again: **it computes a probability distribution over the vocabulary for the next token, given the sequence of tokens that came before it.**.
 
 Mathematically, the engine calculates:
-$$P(\text{token}_t \mid \text{token}_1, \dots, \text{token}_{t-1})$$
+
+$$
+P(\text{token}_t \mid \text{token}_1, \dots, \text{token}_{t-1})
+$$
+
+The model does not "think ahead"...
 
 The model does not "think ahead" to the end of the sentence, nor does it look up facts in an internal relational database. It samples from a probability distribution shaped by its training weights and the exact context currently sitting in its memory buffer (the context window).
 
