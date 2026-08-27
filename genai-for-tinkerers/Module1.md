@@ -2,7 +2,7 @@
 layout: default
 title: Module 1 - Foundational GenAI for the Tinkerer
 date: 2026-08-26
-description: "I don't know what half these relays do, but banging on the dashboard gets us to hyperspace." - Han Solo
+description: '"I don''t know what half these relays do, but banging on the dashboard gets us to hyperspace." - Han Solo'
 ---
 
 <div class="content-header">Module 1: Foundational GenAI for the Tinkerer</div>
@@ -134,13 +134,13 @@ This vector attention mechanism is the beating heart of the **Transformer** arch
 
 At runtime, an LLM performs one foundational calculation over and over again: **it computes a probability distribution over the vocabulary for the next token, given the sequence of tokens that came before it.**.
 
-Mathematically, the engine calculates:
+Mathematically, the engine calculates the probability of each potential next token given the prior sequence:
 
-$$
-P(\text{token}_t \mid \text{token}_1, \dots, \text{token}_{t-1})
-$$
-
-The model does not "think ahead"...
+```text
+[ "flour", "sugar", "pie", "blue" ]  ──►  LLM  ──►  P("berry")  = 88%
+                                                ├──►  P("bird")   =  4%
+                                                └──►  P("sky")    =  1%
+```
 
 The model does not "think ahead" to the end of the sentence, nor does it look up facts in an internal relational database. It samples from a probability distribution shaped by its training weights and the exact context currently sitting in its memory buffer (the context window).
 
