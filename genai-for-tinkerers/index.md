@@ -16,9 +16,9 @@ Strip away the vendor hype: understand probabilistic token prediction, context b
 
 <div class="card" markdown="1">
 
-### [Module 2: Grounded GenAI Usage: NotebookLM & Gems (Coming Soon)](/genai-for-tinkerers/Module2.html)
+### [Module 2: Grounded GenAI Usage: NotebookLM & Gems](/genai-for-tinkerers/Module2.html)
 
-Moving from unconstrained open-web interaction to more targeted interactions and outcomes. Build structured 5-Step YAML system instructions and see how RAG and GenAI can truly help to expedite data processing and learning.
+Moving from unconstrained open-web interaction to more targeted interactions and outcomes. Build structured YAML system instructions with Gemini Gem Building and see how RAG and GenAI can truly help to expedite data processing and learning.
 
 </div>
 

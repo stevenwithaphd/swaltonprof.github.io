@@ -1,0 +1,7 @@
+Department,Escalation Team,Primary Contact,Escalation Email,SLA Window
+Network Infrastructure,NetOps Engineering,Dave Miller,netops-tier2@enterprise.org; d.miller@enterprise.org,2 Hours
+Identity & Access Management,IAM Security,Karen Vance,iam-team@enterprise.org; k.vance@enterprise.org,4 Hours
+Endpoint Systems,Workplace Engineering,Marcus Brody,endpoint-support@enterprise.org; m.brody@enterprise.org,4 Hours
+Information Security,SOC Incident Response,Alex Rivera,soc-tier2@enterprise.org; a.rivera@enterprise.org,1 Hour
+Database & Cloud Systems,Cloud Infrastructure,Rachel Chen,cloud-dba@enterprise.org; r.chen@enterprise.org,2 Hours
+Enterprise Applications,ERP Support Team,Tom Becker,erp-support@enterprise.org; t.becker@enterprise.org,8 Hours

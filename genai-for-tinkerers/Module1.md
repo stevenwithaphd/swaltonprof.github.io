@@ -443,7 +443,7 @@ For context, average human reading speed is roughly 8 tokens per second (t/s), s
    * Prompt the model to generate a Python script to scan open TCP ports.
    * Verify that inference completes 100% offline using your phone's neural processor.
 
-### Discussion Questions
+### Module Discussion Questions
 
 1. How does the "mechanic vs. automotive designer" analogy apply to IT generalists building custom agent harnesses rather than researching raw neural mathematics?
 2. What are the specific security and operational tradeoffs of using JSON versus XML versus Markdown when formatting system prompts and tool outputs?
