@@ -35,25 +35,14 @@ description: "I know Kung Fu, but only if you upload the PDF first. - Duo, just 
 
 In [Module 1](/genai-for-tinkerers/Module1.html), we established that the LLM is an untrusted crate motor. But an engine is only as reliable as the fuel you feed it and the driving rules you set:
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                   FUEL QUALITY & DRIVING GUARDRAILS                    │
-│                                                                        │
-│   UNVERIFIED OPEN WEB (Contaminated Fuel / Bad Gas):                   │
-│   • Raw chat prompts, ungrounded web searches, conflicting forum lore. │
-│   • Causes the engine to sputter, ping, and stall (hallucinations).    │
-│                                                                        │
-│   NOTEBOOKLM (Clean, Filtered Premium Gas):                            │
-│   • 100% closed-domain grounding with exact inline citations.          │
-│   • Only as good as what you give it: junk docs pollute the gas tank.  │
-│   • Zero outside additives: queries draw ONLY from uploaded sources.   │
-│                                                                        │
-│   CUSTOM GEMS & YAML SCHEMAS (Custom Cruise Control & Rules):          │
-│   • Setting strict driving parameters and lane-assist boundaries.      │
-│   • Sets strict speed limits (Task/Context) and clear stop rules       │
-│     (Output Rules & Explicit Fallbacks) to prevent runaway mistakes.   │
-└────────────────────────────────────────────────────────────────────────┘
-```
+> ### Fuel Quality & Driving Guardrails
+> 
+> * **Unverified Open Web (Contaminated Fuel / Bad Gas)**:  
+>   Raw chat prompts, ungrounded web searches, and conflicting forum lore that cause the engine to sputter, ping, and stall (hallucinations).
+> * **NotebookLM (Clean, Filtered Premium Gas)**:  
+>   100% closed-domain grounding with exact inline citations. Only as good as what you feed it: junk docs pollute the gas tank, but zero outside additives are allowed.
+> * **Custom Gems & YAML Schemas (Custom Cruise Control & Rules)**:  
+>   Setting strict driving parameters and lane-assist boundaries: sets strict speed limits (Task/Context) and clear stop rules (Output Rules & Explicit Fallbacks) to prevent runaway mistakes.
 
 * **NotebookLM is Clean, Filtered Fuel**: If you put bad gas (unverified internet scrapes) into a car, it sputters, knocks, and stalls (hallucinations). NotebookLM isolates the fuel system so the engine runs *only* on clean, verified enterprise documentation. Keep in mind it is only as good as what you give it: dumping bloated, uncurated, or contradictory files into your notebook will still pollute your gas tank.
   * *A Quick Reality Check on "Hallucinations"*: When I lie, I don't get the luxury of it being called a "hallucination." Rest assured that when a model steers you wrong in a production environment, mentioning "oh, it hallucinated" doesn't make the mistake go away. You own the output. Grounding is how we engineer out the guesswork and force the system to run on verified organizational truth.
@@ -64,28 +53,12 @@ In [Module 1](/genai-for-tinkerers/Module1.html), we established that the LLM is
 
 ---
 
-## Schedule & Semester Pacing: The Mid-Module Checkpoint
-
-```mermaid
-graph LR
-    subgraph PartA["Part A: Closed-Domain Grounding (16-Wk: Week 3 | 8-Wk: Session 1)"]
-        S1["Section 2.1: NotebookLM Grounding & Multi-Source Synthesis"]
-    end
-
-    subgraph Pause["Mid-Module Checkpoint & Deliverable"]
-        HW["Homework / Lab 2A:<br/>Closed-Domain Policy Audit & Interactive Audio Deep Dive"]
-    end
-
-    subgraph PartB["Part B: Production Gem Engineering (16-Wk: Week 4 | 8-Wk: Session 2)"]
-        S2["Section 2.2: Gemini Gem Building & CSV Ingestion"]
-        Lab["Lab 2B: Custom Production Gem Build & Verification"]
-    end
-
-    PartA --> Pause --> PartB
-```
-
-* **16-Week Schedule**: Section 2.1 in **Week 3**, submit Lab 2A at the checkpoint, and complete Section 2.2 & Lab 2B in **Week 4**.
-* **8-Week Schedule**: Cover Section 2.1 in the first half of **Week 2**, execute the checkpoint audit during the mid-week lab, and build the custom Gem in the second half.
+## Schedule & Semester Pacing
+This module is split into two sections with a natural **mid-module stopping point**:
+* **8-Week Course (Accelerated)**: Complete Section 2.1 in the first half of **Week 2**, execute the **Lab 2A** checkpoint audit during the mid-week lab session, and build your custom Gem in Section 2.2 & **Lab 2B** during the second half.
+* **16-Week Course (Full Semester)**: 
+  * **Week 3 (Part A)**: Complete Section 2.1 (Closed-Domain Grounding & NotebookLM), ending with **Lab 2A** (Closed-Domain Policy Audit & Audio Deep Dive).
+  * **Week 4 (Part B)**: Complete Section 2.2 (Production Gem Engineering & YAML Prompts) and **Lab 2B** (Custom Production Gem Build & Verification).
 
 ---
 
@@ -223,24 +196,12 @@ While that zero-guesswork boundary is invaluable for auditing static compliance 
 
 This is where **Custom Gems** in Google Gemini come into play.
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│               NOTEBOOKLM vs. CUSTOM GEM                                │
-│                                                                        │
-│   NOTEBOOKLM (The Sealed Fuel Tank):                                   │
-│   • Closed-domain document retrieval.                                  │
-│   • Strict inline citations to uploaded text.                          │
-│   • Cannot execute live tools or perform open reasoning.               │
-│   • Best for: Policy audits, contract reviews, study guides.           │
-│                                                                        │
-│   CUSTOM GEMS (Custom Cruise Control & Driving Guardrails):            │
-│   • Open reasoning engine guided by persistent system instructions.    │
-│   • Blends base model knowledge with uploaded reference files (CSVs,   │
-│     SOP runbooks, manager communication playbooks).                    │
-│   • Enforces strict output schemas and fallback protocols.             │
-│   • Best for: Help desk triage, runbook execution, ticket drafting.    │
-└────────────────────────────────────────────────────────────────────────┘
-```
+> ### Architectural Comparison: NotebookLM vs. Custom Gems
+> 
+> * **NotebookLM (The Sealed Fuel Tank)**:  
+>   Closed-domain document retrieval with strict inline citations to uploaded text. Cannot execute live tools or perform ungrounded open reasoning. Best for policy audits, contract reviews, and study guides.
+> * **Custom Gems (Custom Cruise Control & Driving Guardrails)**:  
+>   Open reasoning engine guided by persistent system instructions. Blends base model knowledge with uploaded reference files (CSVs, SOP runbooks, manager playbooks) and enforces strict output schemas and fallback protocols. Best for help desk triage, runbook execution, and ticket drafting.
 
 A Gem is a persistent, specialized AI agent built on top of Gemini. Instead of re-typing your role, audience, formatting preferences, and operational rules every time you open a new chat window, a Gem embeds this operational metadata directly into the model's persistent system instructions.
 
@@ -263,10 +224,8 @@ Whether you configure a Gem, a Custom GPT, or a Claude Project, you are configur
 
 When junior practitioners build custom agents, they typically write their system instructions as long, rambling paragraphs of conversational English:
 
-```text
-# The Sloppy English Approach (Fragile & Ambiguous)
-"You are a helpful IT help desk assistant. Whenever a user gives you a ticket, please look at our SOPs and try to figure out what is wrong. Make sure you are polite to the user and don't use confusing technical jargon. If you need to escalate, find the right team in the contact list and give me their emails. Also remind the technician that they need to verify everything before doing it."
-```
+> **The Sloppy English Approach (Fragile & Ambiguous)**:  
+> *"You are a helpful IT help desk assistant. Whenever a user gives you a ticket, please look at our SOPs and try to figure out what is wrong. Make sure you are polite to the user and don't use confusing technical jargon. If you need to escalate, find the right team in the contact list and give me their emails. Also remind the technician that they need to verify everything before doing it."*
 
 While conversational prompts appear to work during simple testing, they quickly break down in production environments:
 * **Ambiguity and Instruction Bleed**: Natural language paragraphs leave room for probabilistic interpretation. The model may focus heavily on being "polite" while completely skipping the diagnostic checklist or mangling email extraction.
@@ -282,16 +241,18 @@ While conversational prompts appear to work during simple testing, they quickly 
 system_role: "Tier 1.5 Help Desk Technical Mentor & Incident Assistant"
 
 context:
-  description: "Guide Tier 1 technicians through troubleshooting, ground diagnostics in SOPs, and draft client communications."
+  description: >-
+    Guide Tier 1 technicians through troubleshooting, ground
+    diagnostics in SOPs, and draft client communications.
   target_audience: "Tier 1 Help Desk Technicians & Support Specialists."
-  operational_stance: "Advisory only. The human technician owns ticket verification and execution."
+  operational_stance: "Advisory only. The technician owns verification and execution."
 
 operational_competencies:
   ticket_triage:
     - "Classify ticket type (Incident vs. Service Request) and priority (P1-P4)."
     - "Isolate symptoms and map against uploaded SOP runbooks."
   customer_communication:
-    - "Draft user replies following the Manager's Engagement Guide: empathetic, professional, zero jargon."
+    - "Draft user replies following the Manager's Engagement Guide."
 ```
 
 ### Key Advantages of YAML for System Prompts:
@@ -307,12 +268,11 @@ In classical systems engineering, the industry solved specification ambiguity th
 While RFC 2119 is essential for ensuring humans are on the same page regardless of their native language, **YAML prompt architecture takes this concept a step further for LLMs**:
 
 * **Classical RFC 2119 Human Prose**:
-  > *"The assistant MUST extract the matching contact email address from the uploaded CSV and SHALL NOT under any circumstance synthesize or guess a non-existent email address."* (26 tokens)
+  > *"The assistant MUST extract the matching contact email address from the uploaded CSV and SHALL NOT under any circumstance synthesize or guess a non-existent email address."*  
+  > *(26 tokens)*
 * **YAML + Telegraphic English**:
-  > ```yaml
-  > missing_data_protocol: "Extract CSV matches only. If missing, output: ESCALATION_TEAM_NOT_FOUND."
-  > ```
-  > (12 tokens: **~54% token reduction** with tighter boundary adherence).
+  > `missing_data_protocol: "Extract CSV matches only. If missing, output: ESCALATION_TEAM_NOT_FOUND."`  
+  > *(12 tokens: **~54% token reduction** with tighter boundary adherence).*
 
 Large Language Models do not need polite conversational glue, articles (*a, an, the*), or complex subject-verb conjugations to understand constraints. They operate on semantic attention vectors across token clusters. By pairing YAML key-value hierarchies with concise "telegraphic" phrasing, you establish unambiguous behavioral guardrails without paying a heavy token tax on conversational fluff.
 
@@ -322,17 +282,13 @@ Large Language Models do not need polite conversational glue, articles (*a, an, 
 
 To construct a resilient, enterprise-grade Gem, avoid fabricated, hokey prompt frameworks. Instead, anchor your system instructions directly to five fundamental operational primitives:
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                 FIVE CORE PRIMITIVES OF PRODUCTION PROMPTS             │
-│                                                                        │
-│   1. SYSTEM_ROLE: Operational archetype, stance, and authority.        │
-│   2. CONTEXT: Environment, audience tone, and primary mission.         │
-│   3. OPERATIONAL_COMPETENCIES: Step-by-step diagnostic logic.          │
-│   4. REPORT_STRUCTURE: Positive output templates & headers.            │
-│   5. RULES_AND_FALLBACKS: Missing-data handling & safety disclaimers.  │
-└────────────────────────────────────────────────────────────────────────┘
-```
+> ### The Five Core Primitives of Production Prompts
+> 
+> 1. **`system_role`**: Operational archetype, stance, and technical authority.
+> 2. **`context`**: Operating environment, audience tone, and primary mission.
+> 3. **`operational_competencies`**: Step-by-step diagnostic checklists and runbook logic.
+> 4. **`report_structure`**: Positive output templates, mandatory headers, and copy-paste blocks.
+> 5. **`rules_and_fallbacks`**: Missing-data handling, error protocols, and safety disclaimers.
 
 ### 1. System Role & Identity (`system_role`)
 Define the exact operational archetype and technical stance of the agent. Be specific about its boundaries. For example, rather than *"You are an IT helper"*, define:
@@ -384,28 +340,14 @@ Using GenAI to construct, debug, and optimize your production AI harnesses turns
 
 A primary strength of custom Gems is the ability to attach reference knowledge files directly to the agent. In a production IT Help Desk environment, you can ground your Gem against three distinct types of organizational knowledge simultaneously:
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                  MULTI-SOURCE KNOWLEDGE INGESTION PIPELINE             │
-│                                                                        │
-│   1. TECHNICAL RUNBOOKS (sample_helpdesk_sops.md)                      │
-│      • SOP-101: Remote Access VPN & MFA Token Desync                   │
-│      • SOP-102: Account Lockouts & Password Reset Verification         │
-│      • SOP-103: Network Print Spooler Queue & Driver Clears            │
-│      • SOP-104: Phishing Triage & Credential Compromise Containment    │
-│      • SOP-105: Software Provisioning & Privilege Elevation            │
-│                                                                        │
-│   2. COMMUNICATION PLAYBOOK (manager_engagement_guide.md)              │
-│      • The Help Desk Manager's customer service philosophy.            │
-│      • Banned internal jargon vs. customer-friendly translations.      │
-│      • Approved email templates, empathy rules, and SLA windows.       │
-│                                                                        │
-│   3. STRUCTURED ESCALATION ROSTER (sample_escalation_roster.csv)       │
-│      • Tabular directory: Department, Escalation Team, Contact,        │
-│        Escalation Email, and SLA Window.                               │
-│      • Parsed deterministically for semicolon-delimited mail strings.  │
-└────────────────────────────────────────────────────────────────────────┘
-```
+> ### Multi-Source Knowledge Ingestion Pipeline
+> 
+> 1. **Technical Runbooks (`sample_helpdesk_sops.md`)**:  
+>    SOP-101 through SOP-105 covering remote access VPN & MFA desync, account lockouts, print spooler queue clears, phishing triage, and software provisioning.
+> 2. **Communication Playbook (`manager_engagement_guide.md`)**:  
+>    The Help Desk Manager's customer service philosophy: approved email templates, empathy rules, SLA windows, and banned internal technical jargon paired with customer-friendly translations.
+> 3. **Structured Escalation Roster (`sample_escalation_roster.csv`)**:  
+>    Tabular directory mapping departments to escalation teams, primary contacts, escalation emails, and SLA windows, parsed deterministically for semicolon-delimited recipient strings.
 
 ### 1. Ingesting Technical Runbooks (`sample_helpdesk_sops.md`)
 Help desk Standard Operating Procedures (SOPs) provide the technical guardrails. When a technician submits a ticket about a VPN error or printer freeze, the Gem cross-references the symptoms against uploaded SOPs (e.g., SOP-101 or SOP-103) and extracts the exact diagnostic checklist for the technician to test before escalating. If you think about higher tiers like Engineering and Architecture, you can even ingest vendor documentation and technical whitepapers to help you rapidly evaluate multiple tools before signing multi-year contracts, as one practical example! 
@@ -417,15 +359,14 @@ Technical competence means nothing if your team communicates abrasively with cli
 * **Structured Steps**: Formatting customer instructions into clean, 3-step action items with realistic update timelines.
 
 ### 3. Ingesting Structured Tabular CSVs (`sample_escalation_roster.csv`)
-Gems also excel at parsing structured tabular data without requiring SQL databases or Python scripts. By uploading an escalation roster CSV:
+Gems also excel at parsing structured tabular data without requiring SQL databases or Python scripts. By uploading an escalation roster CSV (see [`support_docs/sample_escalation_roster.csv`](support_docs/sample_escalation_roster.csv)):
 
-```csv
-Department,Escalation Team,Primary Contact,Escalation Email,SLA Window
-Network Infrastructure,NetOps Engineering,Dave Miller,netops-tier2@enterprise.org; d.miller@enterprise.org,2 Hours
-Identity & Access Management,IAM Security,Karen Vance,iam-team@enterprise.org; k.vance@enterprise.org,4 Hours
-Endpoint Systems,Workplace Engineering,Marcus Brody,endpoint-support@enterprise.org; m.brody@enterprise.org,4 Hours
-Information Security,SOC Incident Response,Alex Rivera,soc-tier2@enterprise.org; a.rivera@enterprise.org,1 Hour
-```
+| Department | Escalation Team | Primary Contact | Escalation Email | SLA Window |
+|---|---|---|---|---|
+| **Network Infrastructure** | NetOps Engineering | Dave Miller | `netops-tier2@enterprise.org; d.miller@enterprise.org` | 2 Hours |
+| **Identity & Access Management** | IAM Security | Karen Vance | `iam-team@enterprise.org; k.vance@enterprise.org` | 4 Hours |
+| **Endpoint Systems** | Workplace Engineering | Marcus Brody | `endpoint-support@enterprise.org; m.brody@enterprise.org` | 4 Hours |
+| **Information Security** | SOC Incident Response | Alex Rivera | `soc-tier2@enterprise.org; a.rivera@enterprise.org` | 1 Hour |
 
 When a ticket requires Tier 2 escalation, the Gem searches the CSV, extracts the appropriate team and contacts, and formats them into a ready-to-use semicolon-delimited string (`netops-tier2@enterprise.org; d.miller@enterprise.org`) suitable for immediate pasting into email To/CC fields or ticketing dispatch queues.
 
@@ -447,14 +388,11 @@ Below is the configured **Tier 1.5 Help Desk Technical Mentor** inside Google Ge
 
 Let us observe how this Gem processes a realistic incoming ticket:
 
-```text
-# Input Prompt to Gem
-Help me triage this incoming ticket from user 'Eleanor Vance':
-
-Ticket Subject: Cannot connect to VPN from home - getting error AUTH_RADIUS_TIMEOUT
-Ticket Body:
-"I am trying to log into the corporate VPN from home to finish a critical quarterly report, but the client gets stuck on 'Securing connection' and then gives me an AUTH_RADIUS_TIMEOUT error. I need this fixed immediately!"
-```
+> **Input Prompt Issued to Gem**:  
+> Help me triage this incoming ticket from user 'Eleanor Vance':  
+> 
+> * **Ticket Subject**: Cannot connect to VPN from home - getting error `AUTH_RADIUS_TIMEOUT`  
+> * **Ticket Body**: *"I am trying to log into the corporate VPN from home to finish a critical quarterly report, but the client gets stuck on 'Securing connection' and then gives me an AUTH_RADIUS_TIMEOUT error. I need this fixed immediately!"*
 
 When evaluated against the Gem's instructions and uploaded knowledge files, the Gem produces the structured four-section deliverable shown below. Note that this is the actual output generated during my testing in writing this module; due to the non-deterministic nature of LLMs, your exact wording may vary slightly across runs, but the structural fields, SOP grounding, and contact lookups should consistently hit the same core topics.
 
