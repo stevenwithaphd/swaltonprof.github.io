@@ -48,6 +48,8 @@ In [Module 1](/genai-for-tinkerers/Module1.html), we established that the LLM is
   * *A Quick Reality Check on "Hallucinations"*: When I lie, I don't get the luxury of it being called a "hallucination." Rest assured that when a model steers you wrong in a production environment, mentioning "oh, it hallucinated" doesn't make the mistake go away. You own the output. Grounding is how we engineer out the guesswork and force the system to run on verified organizational truth.
 * **Custom Gems & YAML Schemas are the Driving Guardrails**: Unlike NotebookLM's sealed fuel tank, a custom Gem operates on an open-world engine with access to base model weights and live web tools. You don't leave driving to chance. Gemini Gem Building and structured YAML schemas act as your custom driving rules; setting clear speed limits (Persona/Context) and hard boundaries (Output Rules, Strict Templates, and Explicit Fallback Notes that instruct the model when to stick to uploaded datasets and when to engage external tools).
 
+---
+
 * TOC
 {:toc}
 
