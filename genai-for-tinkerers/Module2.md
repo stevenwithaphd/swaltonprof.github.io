@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Module 2 - Grounded GenAI Usage: NotebookLM & Gems
+title: Module 2 - Grounded GenAI Usage - NotebookLM & Gems
 date: 2026-08-30
 description: "I know Kung Fu, but only if you upload the PDF first. - Duo, just before receiving a 'kill -9' from an Agent."
 ---
