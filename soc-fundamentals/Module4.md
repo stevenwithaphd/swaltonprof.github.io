@@ -2,7 +2,7 @@
 layout: default
 title: Module 4 - Network Defense
 date: 2026-05-26
-description: The network is the battlefield. Love is also a battlefield they say, fairness exists in niether.
+description: The network is the battlefield. Love is also a battlefield they say, fairness exists in neither.
 ---
 
 <div class="content-header">Module 4: Network Defense</div>
@@ -78,7 +78,7 @@ Dashboards lie. Logs get dropped. EDR agents get bypassed. But the wire never li
 
 ## Modern Twists: Esports, Latency, and Availability
 
-The traditional enterprise focus is heavily tilted toward confidentiality and integrity. However, in certain industries, availability and performance dictate the architecture. The most egregious item you will find when dealing with eSports is Nintendo's "basically forward all ports to the Switch" requirement which is just security horror. If you exist in a IT role and have to support esports, you also have to contend with sore losers and cheats who engage in highly sophisticated layer 4 and layer 3 attacks to disrupt gameplay. Yes, those lag switches are now the problem of the security team!
+The traditional enterprise focus is heavily tilted toward confidentiality and integrity. However, in certain industries, availability and performance dictate the architecture. The most egregious item you will find when dealing with eSports is Nintendo's "basically forward all ports to the Switch" requirement which is just security horror. If you exist in an IT role and have to support esports, you also have to contend with sore losers and cheats who engage in highly sophisticated layer 4 and layer 3 attacks to disrupt gameplay. Yes, those lag switches are now the problem of the security team!
 
 * **The Latency vs. Security Trade-off:** In online esports or high-frequency trading, every single millisecond counts. Implementing heavy deep packet inspection (DPI) and SSL decryption inherently introduces processing latency. Organizations in these spaces face a constant struggle: how do you balance extreme high-availability and low-latency requirements with the need to deeply inspect traffic for malware? Often, security controls must be selectively applied or pushed to the absolute edge of the network to minimize impact on the core application. If you want to look at how network engineers and gaming operators balance high-throughput, low-latency requirements against Layer 3/4 DDoS attacks and cheats, check out Cloudflare's paper on [Cybersecurity Best Practices for Online Gaming](https://www.cloudflare.com/lp/cyber-security-best-practices-online-gaming/).
 * **DDoS (Distributed Denial of Service) Mitigation:** While data breaches grab headlines, DDoS attacks are a constant, brute-force threat aimed squarely at availability. Modern attackers utilize massive botnets to simply overwhelm the wire, saturating the physical bandwidth before the traffic even reaches the firewall. Defenders counter this by utilizing Anycast routing to distribute the traffic globally, scrubbing centers (like Cloudflare or Akamai) to filter out the malicious packets upstream, and BGP blackholing to completely drop traffic destined for a targeted IP, sacrificing a single host to keep the rest of the enterprise online.

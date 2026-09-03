@@ -114,7 +114,7 @@ A SOAR playbook is essentially an automated flowchart of API calls, condition ch
   * Isolating an endpoint from the network via EDR.
   * Pushing an automated IP block rule to the enterprise edge firewall.
 
-The cardinal rule of SOC automation is that **automation should eliminate repetitive toil, not replace human judgment**. Containment actions that can disrupt business operations should almost always include a human approval gate (such as an interactive Slack/Teams prompt or an explicit button in the ticket) where the analyst confirms the action before the playbook pulls the trigger. It is also worth noting that even when GenAI enters the picture, human-in-the-loop (HITL) is all the more important. This is the yet another time where I am saying that all these systems are based on human's designing things and thus have inherent commonalities and "sameness".
+The cardinal rule of SOC automation is that **automation should eliminate repetitive toil, not replace human judgment**. Containment actions that can disrupt business operations should almost always include a human approval gate (such as an interactive Slack/Teams prompt or an explicit button in the ticket) where the analyst confirms the action before the playbook pulls the trigger. It is also worth noting that even when GenAI enters the picture, human-in-the-loop (HITL) is all the more important. This is the yet another time where I am saying that all these systems are based on humans designing things and thus have inherent commonalities and "sameness".
 
 ### API Integrations, Webhooks, and Error Handling Under Fire
 
@@ -154,7 +154,7 @@ To share and consume this massive volume of threat data systematically, the indu
 
 When configuring threat intelligence in your SOC stack, [David Bianco's Pyramid of Pain](https://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html) serves as the definitive guide for prioritizing detection engineering efforts:
 
-```
+```text
                   / \
                  /   \
                 / TTPs \             <-- Tough (Behavioral patterns)
@@ -197,7 +197,7 @@ Enterprise environments typically rely on standardized platforms for managing se
 * **Jira Service Management:** Popular among software-centric and agile organizations, offering flexible custom workflows and native familiarity for engineering teams.
 * **TheHive:** A purpose-built, open-source security incident response platform widely used by MSSPs and leaner security teams who need deep integration with threat intelligence tools (such as MISP) and automated observables analysis (via Cortex analyzers).
 
-The security ticket lifecycle follows a standardized progression: **Ingestion** (auto-created via SIEM/EDR alert) $\rightarrow$ **Triage & Assignment** (analyst validation) $\rightarrow$ **Active Investigation** $\rightarrow$ **Containment & Remediation** $\rightarrow$ **Resolution** $\rightarrow$ **Post-Incident Review**.
+The security ticket lifecycle follows a standardized progression: **Ingestion** (auto-created via SIEM/EDR alert) → **Triage & Assignment** (analyst validation) → **Active Investigation** → **Containment & Remediation** → **Resolution** → **Post-Incident Review**.
 
 In both internal SOCs and commercial MSSP environments, operations are governed by **Service Level Agreements (SLAs)**:
 
@@ -217,7 +217,7 @@ A healthy operation utilizes standardized **disposition codes** when closing tic
 * **Benign True Positive (Expected Behavior):** The rule fired correctly as written (e.g., an administrator ran a remote PowerShell script), but the activity was authorized and harmless.
 * **False Positive (Defective Detection Logic):** The rule triggered due to flawed logic, overly broad regex patterns, or misidentified baseline telemetry.
 
-Detection engineering teams run recurring weekly or monthly reports against these disposition metrics. The noisest rules generating high volumes of false positives or benign triggers are prioritized in engineering sprints for tuning, exclusion list updates, or complete deprecation.
+Detection engineering teams run recurring weekly or monthly reports against these disposition metrics. The noisiest rules generating high volumes of false positives or benign triggers are prioritized in engineering sprints for tuning, exclusion list updates, or complete deprecation.
 
 ### Metric Integrity: MTTD, MTTR, and the Danger of Metric Gaming
 
@@ -281,7 +281,7 @@ The market offers two distinct operational paradigms:
 
 The fundamental truth of open-source software in enterprise security is simple: **"Open-source is free like a puppy, not free like a beer."**
 
-```
+```text
 +-----------------------------------------------------------------------------------+
 |                        THE TOTAL COST OF OWNERSHIP (TCO)                         |
 +-----------------------------------------------------------------------------------+

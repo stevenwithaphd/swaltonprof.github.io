@@ -43,3 +43,5 @@ When an organization cannot dictate the security posture of the physical hardwar
 # The Reality of Mobile Device Security
 
 The reality of mobile device security is that it remains an operational wild west. Unlike traditional corporate workstations, mobile devices actively fracture the perimeter, and because most organizations lack the financial or political capital to enforce strict hardware ownership, security teams are forced to defend assets they cannot fully control. This inherent lack of visibility makes relying solely on endpoint containerization or service-level access controls a precarious strategy. When you cannot trust the physical device in the user's hand, you must fall back to controlling the pathways it uses to communicate. This operational gap necessitates a highly disciplined network architecture. In Module 4, we will pivot to Network Defense, exploring how network firewalls, traffic taps, web proxies, DNS filtering, and Public Key Infrastructure (PKI) establish the critical choke points required to detect and neutralize the threats that inevitably slip past an unmanaged endpoint.
+
+</div>
