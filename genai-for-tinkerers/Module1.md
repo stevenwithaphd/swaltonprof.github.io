@@ -31,6 +31,7 @@ Just as Security Operations Centers evolve through messy, ad hoc stages before e
 * **Stage 1: Shadow IT and the Public Web Chat**: Individual employees, overwhelmed by daily workloads, discover that consumer web interfaces can draft emails, summarize PDFs, or write Excel formulas. They begin quietly pasting corporate emails, proprietary firewall configurations, and internal customer records into third-party cloud chatbots without encryption, access controls, or legal data agreements. 
 
   This reckless usage produces immediate real-world fallout:
+
   * **Fabricated Case Law**: In the landmark [*Mata v. Avianca*](https://en.wikipedia.org/wiki/Mata_v._Avianca,_Inc.) sanctions, attorneys were fined by a federal judge for submitting court briefs filled with fictitious judicial opinions hallucinated by ChatGPT.
   * **Subpoenaed Prompt Logs & Destroyed Credibility**: In the 2026 litigation over the fatal Watson Grinding facility explosion, plaintiffs' counsel discovered that a key defense expert witness used ChatGPT to write 85-90% of his liability report. Opposing counsel subpoenaed 350 pages of raw ChatGPT session logs, exposing prompts where the expert explicitly instructed the AI to *"show how 3M is 0% at fault"*. The exposed logs dismantled the defense's credibility, culminating in a $61.5 million jury verdict ([Forbes, 2026](https://www.forbes.com/sites/larsdaniel/2026/08/26/expert-witness-asked-chatgpt-to-show-0-fault-the-wrong-way-for-experts-to-use-ai/)).
   * **No Attorney-Client Privilege**: Courts have consistently ruled that feeding proprietary corporate data or legal strategy into public web chatbots waives confidentiality and is fully discoverable during litigation. **Remember**, if you aren't paying, you are the product; yet another call-back from years gone by when "free services" were first entering the internet.
@@ -66,7 +67,9 @@ An experienced mechanic doesn't need a PhD in metallurgy or petroleum chemistry 
 ---
 
 # Schedule & Semester Pacing
+
 This module is split into two sections with a natural **mid-module stopping point**:
+
 * **8-Week Course (Accelerated)**: Complete the entire module (Sections 1.1 through 1.3, plus Labs 1A & 1B) in **Week 1**.
 * **16-Week Course (Full Semester)**: 
   * **Week 1 (Part A)**: Complete Sections 1.1 & 1.2, ending with **Lab 1A** (Prompt Conditioning & Token Audit).
@@ -81,6 +84,7 @@ In tech, the golden rule used to be: *"Never run code off the internet that you 
 With the advent of Generative AI, that rule has evolved, while still being just as pertinent. Today, you **must** run these models to remain competitive, but you cannot dissect models, nor get the frontier providers to show their inner workings. Therefore, the modern IT generalist must treat the LLM as an **untrusted, black-box vendor appliance**, much like any vendor provided appliance, monitoring it for non-deterministic drift, unannounced cloud vendor updates, context vulnerabilities, and operational failures. While local models can be locked in like most other FOSS tools, cloud models will continue to be updated by the vendors without notice and without even incrementing version numbers. The cloud models, while certainly more capable than what most can run on local hardware, introduce a level of uncertainty that IT generalists must account for in their designs.
 
 By the end of this module, practitioners will be able to:
+
 1. **Treat the LLM as an Untrusted Black-Box Appliance**: Apply IT systems hygiene to AI models, accounting for vendor update cycles, micro-drifts, and unannounced cloud parameter shifts.
 2. **Contrast Deterministic Automation with Probabilistic Generation**: Understand why traditional scripts (`if/then`) behave predictably, while LLMs operate on statistical token adjacency.
 3. **Structure Context Efficiently (JSON vs. Markdown vs. XML vs. HTML)**: Evaluate markup tradeoffs to minimize token consumption and improve model adherence.
@@ -97,6 +101,7 @@ By the end of this module, practitioners will be able to:
 In enterprise networking, you never develop your own firewalls or core switches from scratch. You purchase an appliance from a vendor (such as Cisco, Palo Alto, or Fortinet). You do not have access to the proprietary source code running inside the ASIC chips, nor do you take the vendor's marketing claims of "unbreakable security" at face value.
 
 Instead, you practice standard systems hygiene:
+
 1. You place the appliance on an isolated management network segment (AND NEVER ONLINE).
 2. You configure strict Access Control Lists (ACLs) governing what traffic enters and exits.
 3. You validate all configurations against documented internal security baselines.
@@ -110,9 +115,9 @@ Furthermore, cloud AI providers constantly modify their models behind the API en
 
 Computers do not process human words, letters, or abstract concepts; they process numbers. When you pass a string of text to an LLM, the model does not see the words on your screen. The input passes through a preprocessing program called a **tokenizer**, which slices the text into discrete chunks called **tokens**.
 
-In English text, a token represents roughly 4 characters or 0.75 words. Common words (like "the", "server", "port") are assigned a single unique token ID, while rare terms, IP addresses, or complex variable names are chopped into multiple sub-word pieces. In a way this reflects something like Kanji, where a symbol represents a word or root concept, while latin characters are combined in sequence to form words. Do note this rough math may vary across other languages.
+In English text, a token represents roughly 4 characters or 0.75 words. Common words (like "the", "server", "port") are assigned a single unique token ID, while rare terms, IP addresses, or complex variable names are chopped into multiple sub-word pieces. In a way this reflects something like Kanji, where a symbol represents a word or root concept, while Latin characters are combined in sequence to form words. Do note this rough math may vary across other languages.
 
-```
+```text
 Raw Input String:
 "192.168.1.50 dropped packet on eth0"
 
@@ -132,7 +137,7 @@ This vector attention mechanism is the beating heart of the **Transformer** arch
 
 ## Next-Token Prediction & The Context Window
 
-At runtime, an LLM performs one foundational calculation over and over again: **it computes a probability distribution over the vocabulary for the next token, given the sequence of tokens that came before it.**.
+At runtime, an LLM performs one foundational calculation over and over again: **it computes a probability distribution over the vocabulary for the next token, given the sequence of tokens that came before it.**
 
 Mathematically, the engine calculates the probability of each potential next token given the prior sequence:
 
@@ -152,7 +157,7 @@ However, if the preceding context contains tokens related to baking (`["flour", 
 
 This probabilistic nature explains why **negative prompting** frequently fails in Generative AI. 
 
-When you instruct an LLM: *"Write an incident summary, but do NOT mention ransomware or PowerShell"*, you have explicitly inserted the tokens `"ransomware"` and `"PowerShell"` directly into the model's active attention window. Because the model's attention heads process all active tokens to calculate the next word, you have inadvertently heightened the statistical relevance of those exact forbidden concepts. This mirrors the psychological phenomenon where telling someone *"You can always see your nose, but your mind filters it out"* immediately forces them to see their nose... and likely be frustrated at you. <sorry>
+When you instruct an LLM: *"Write an incident summary, but do NOT mention ransomware or PowerShell"*, you have explicitly inserted the tokens `"ransomware"` and `"PowerShell"` directly into the model's active attention window. Because the model's attention heads process all active tokens to calculate the next word, you have inadvertently heightened the statistical relevance of those exact forbidden concepts. This mirrors the psychological phenomenon where telling someone *"You can always see your nose, but your mind filters it out"* immediately forces them to see their nose... and likely be frustrated at you. (sorry!)
 
 To achieve reliable results, apply the same logic used in dog training: **focus on reinforcing the desired positive behavior to the complete erasure of the bad**. Rather than giving the model a laundry list of things to avoid, explicitly define the exact required structure, provide target schemas, and supply positive examples of the desired output. When you pack the context with clear positive structure, there is little space left for unwanted deviations.
 
@@ -163,6 +168,7 @@ Frontier language models (such as Gemini, GPT, and Claude) were created by scrap
 While this grants the model an expansive general vocabulary, it also means the engine inherits the fundamental traits of the open internet and "the victor writes the history books" : cultural biases, sarcasm, outdated technical practices, confident falsehoods, and toxic forum arguments.
 
 This creates severe operational and ethical hazards in enterprise environments:
+
 * **High-Stakes Evaluation Trap**: Using a raw, ungrounded LLM to automate resume screening, loan approvals, or disciplinary reviews without strict human oversight is both legally dangerous and fundamentally flawed. The model will naturally replicate historical human prejudices embedded in historical hiring text.
 * **Satirical Ingestion Hazard**: When models digest internet content without semantic validation, satire is ingested as factual truth. Google's AI Overview famously advised search users to *"add non-toxic glue to pizza sauce to prevent cheese sliding"*, directly reciting a satirical comment posted on Reddit over a decade earlier.
 * **Enterprise Clean-Room & Indemnity (IBM Granite)**: For regulated organizations (finance, healthcare, government) that cannot risk copyright infringement, poisoned public web data, or opaque licensing, enterprise architectures leverage models like **IBM Granite**. Granite models are trained on rigorously curated, enterprise-grade datasets (spanning finance, law, code, and science) with full data provenance disclosure (scoring among the highest on the [Stanford CRFM Foundation Model Transparency Index (FMTI)](https://crfm.stanford.edu/fmti/)), backed by contractual intellectual property (IP) indemnification that shields enterprise clients from third-party copyright claims ([IBM Newsroom, 2023](https://newsroom.ibm.com/2023-09-28-IBM-Announces-Availability-of-watsonx-Granite-Model-Series,-Client-Protections-for-IBM-watsonx-Models)).
@@ -175,7 +181,7 @@ Because LLMs operate on token IDs rather than individual letters or characters, 
 * **The Seahorse Emoji Anomaly**: There is no single official Unicode character for a seahorse emoji, yet tokenizers frequently assign ambiguous byte combinations to it, causing models to hallucinate its visual appearance or mangle downstream text when encountering it.
 * **Memetic Data Contamination**: If you ask a modern frontier model the "strawberry" riddle today, it will usually answer three correctly. Did the model suddenly learn to count characters? No. The viral 2024 internet discourse *about* the strawberry riddle was scraped into the model's subsequent training data! The model simply memorized the internet debating its own limitation.
 
-```
+```text
 ┌────────────────────────────────────────────────────────────────────────┐
 │                       THE ROCK CRAWLER PRINCIPLE                       │
 │                                                                        │
@@ -203,8 +209,8 @@ Security researchers have demonstrated that placing as few as **13 to 20 careful
 
 To maintain engineering control, every IT practitioner must internalize the fundamental difference between traditional automation and Generative AI:
 
-* **Deterministic Automation (Traditional IT)**: PowerShell, Bash, Python, SQL, REST APIs. Given identical input $X$, the output is guaranteed to be $Y$ every single time. If an error occurs, the script halts and throws an error.
-* **Non-Deterministic Automation (Generative AI)**: Given identical prompt $X$, the output may vary ($Y_1, Y_2, Y_3$) across runs due to floating-point temperature sampling, random seeds, and context ordering.
+* **Deterministic Automation (Traditional IT)**: PowerShell, Bash, Python, SQL, REST APIs. Given identical input `X`, the output is guaranteed to be `Y` every single time. If an error occurs, the script halts and throws an error.
+* **Non-Deterministic Automation (Generative AI)**: Given identical prompt `X`, the output may vary (`Y_1`, `Y_2`, `Y_3`) across runs due to floating-point temperature sampling, random seeds, and context ordering.
 
 > [!IMPORTANT]
 > **The Golden Operational Rule**:
@@ -229,7 +235,7 @@ When designing agentic harnesses and formatting system prompts, how you structur
 * **Markdown (`#`, `-`, `|`)**: Highly token-efficient, human-readable, and universally understood across all modern LLMs. Tables and bulleted lists consume minimal token overhead while maintaining clear hierarchy.
 * **HTML (`<div>`, `<p>`)**: Seemingly the worst format for LLM ingestion, but some research says it is the best. Raw HTML scraped from websites is bloated with navigation menus, styling tags, tracking scripts, and attributes that consume massive context real estate and distract the model's attention heads.
 
-```
+```text
 Token Efficiency Hierarchy:
 Markdown (Most Efficient) > JSON (Strict Typing) > XML (Highest Isolation) > HTML (Severe Bloat)
 ```
@@ -242,7 +248,7 @@ Cloud vendors actively advertise massive context windows (claiming 1-2M tokens w
 2. **Custom Instructions & Knowledge Uploads**: In platforms like Google Gemini Gems or OpenAI Custom GPTs, your uploaded reference PDFs and system instructions are silently prepended to every single query you execute.
 3. **Compound Multi-Turn History**: In long chat sessions, the harness re-sends the entire preceding conversation on every turn. A 20-turn conversation can easily consume hundreds of thousands of tokens without the user realizing it.
 
-```
+```text
 ┌────────────────────────────────────────────────────────────────────────┐
 │                      HIDDEN CONTEXT WINDOW BLOAT                       │
 │                                                                        │
@@ -287,6 +293,7 @@ Generative AI extends far beyond plain text into image, audio, and video synthes
 ### Using GenAI as a Learning Accelerator
 
 As an IT practitioner, one of the most powerful applications of Generative AI is using it as an interactive technical mentor:
+
 * **Dissecting Obscure Errors**: Feed raw stack traces, memory dumps, or hex outputs into a model and prompt: *"Explain step-by-step what system condition caused this exception."*
 * **RFC Translation**: Ask the model to translate complex RFC specifications (like BGP path selection or OAuth2 token exchange) into simplified state machine diagrams.
 * **The Eager Intern Rule**: Always treat AI explanations like drafts produced by an enthusiastic, brilliant junior intern. The model will accelerate your research by 80%, but you must always verify critical network configurations and security rules against authoritative source documentation before applying changes in production.
@@ -307,7 +314,7 @@ As an IT practitioner, one of the most powerful applications of Generative AI is
 
 1. **The Non-Deterministic Benchmark**:
    * Take a raw, 20-line unstructured log snippet you can understand.
-   * Submit the snippet to a frontier cloud model 5 consecutive times, clearing context between submission, prompting simply: *"Summarize these logs."*
+   * Submit the snippet to a frontier cloud model 5 consecutive times, clearing context between submissions, prompting simply: *"Summarize these logs."*
    * Document the structural differences, varying sentence lengths, and details across all 5 runs.
 2. **Token Efficiency Comparison**:
    * Manually format the same log summary in **JSON**, **XML**, and **Markdown**.
@@ -323,13 +330,14 @@ As an IT practitioner, one of the most powerful applications of Generative AI is
 ### Why Local Models Matter to the Systems Practitioner
 
 While frontier cloud models offer massive reasoning power, relying exclusively on third-party cloud APIs introduces severe operational risks:
+
 1. **Data Sovereignty & Privacy**: Feeding sensitive telemetry, internal hostnames, firewall rules, or customer PII into public cloud APIs can violate compliance mandates (HIPAA, PCI-DSS, GDPR).
 2. **Cost Predictability**: High-throughput cloud API calls incur per-token charges that scale unpredictably during automated log processing or high-volume incident triage.
 3. **Offline Resilience**: When an ISP connection drops, or when working in an air-gapped data center, server closet, or remote field location, cloud models become inaccessible.
 
 Running open-weight models locally on your own workstations, servers, or mobile devices provides 100% private, air-gapped, minimal OpEx inference.
 
-```
+```text
 ┌────────────────────────────────────────────────────────────────────────┐
 │                        LOCAL RUNTIME ECOSYSTEM                         │
 │                                                                        │
@@ -349,7 +357,7 @@ Running open-weight models locally on your own workstations, servers, or mobile 
 ### The Local Model Toolchain
 
 * **LM Studio (Desktop GUI)**: An intuitive desktop application for Windows, macOS, and Linux. Allows you to search Hugging Face, download quantized models with one click, chat locally, and spin up a local OpenAI-compatible REST server to connect external tools. "Baby's first harness" as it has different modes to expose knobs to you and has much of what you need to get started. Additionally, it will scope models to your hardware as to avoid a scenario where you download something that you can't feasibly run. You can find more information about the project at [https://lmstudio.ai/](https://lmstudio.ai/).
-* **Ollama (Headless Daemon / CLI)**: A lightweight, command-line runner that runs as a background service. Easily scripted with PowerShell, Bash, or Python, making it the industry standard for backend servers and automated pipelines. You can find more information about the project at [https://ollama.ai/](https://ollama.ai/). What you will most likely use if you start building out your own harness.
+* **Ollama (Headless Daemon / CLI)**: A lightweight, command-line runner that runs as a background service. Easily scripted with PowerShell, Bash, or Python, making it the industry standard for backend servers and automated pipelines. You can find more information about the project at [https://ollama.com/](https://ollama.com/). What you will most likely use if you start building out your own harness.
 * **PocketPal AI (On-Device Mobile)**: A fully open-source mobile application for iOS and Android that runs quantized Small Language Models (SLMs) directly on your smartphone's GPU and Neural Engine. You can find more information about the project at [https://github.com/a-ghorbani/pocketpal-ai](https://github.com/a-ghorbani/pocketpal-ai).
 * **Others**: The above three aren't the end of it. [Jan.ai](https://jan.ai/) is an open-source LM Studio, [`llama.cpp`](https://github.com/ggerganov/llama.cpp) is what Ollama is calling and may be recommended, while [vLLM](https://github.com/vllm-project/vllm) and [Open WebUI](https://github.com/open-webui/open-webui) also exist for those who want to go from tinkerers to builders. Just know that things are moving rapidly and opinions are strong!
 
@@ -357,18 +365,19 @@ Running open-weight models locally on your own workstations, servers, or mobile 
 
 When a foundation model is trained in a supercomputer cluster, its weights (parameters) are calculated and stored in uncompressed 16-bit or 32-bit floating-point precision (`FP16` / `FP32`). At 16 bits per parameter, a modest 7-billion parameter model requires roughly **14 GB to 16 GB of raw VRAM** just to load its weights into memory, placing it completely out of reach for standard consumer workstations and laptops.
 
-* **Quantization** is the mathematical process of compressing these floating-point weights down to lower-bit integer representations (such as 8-bit `Q8_0`, 4-bit `Q4_K_M`, or 2-bit):
+* **Quantization** is the mathematical process of compressing these floating-point weights down to lower-bit integer representations (such as 8-bit `Q8_0`, 4-bit `Q4_K_M`, or 2-bit).
 * **The Lossy Compression Analogy**: Think of quantization like audio bitrate compression or image downsampling. Converting an uncompressed 50 MB `.wav` studio track into a 4 MB 320 kbps `.mp3` discards mathematical micro-nuance that human ears cannot perceive. Similarly, 4-bit quantization reduces memory footprint by 70-75% while preserving over 98% of the model's practical reasoning, coding, and log-parsing intelligence.
 * **The GGUF Standard**: Developed by Georgi Gerganov and the open-source [`llama.cpp`](https://github.com/ggerganov/llama.cpp) community, **GGUF (GPT-Generated Unified Format)** is the universal binary container for local inference. A single `.gguf` file packages the neural architecture, quantized weights, tokenizer vocabulary, and execution metadata into a portable binary that can execute across CPUs, discrete GPUs, and mobile Neural Processing Units (NPUs).
 * **Ecosystem Acceleration & Hardware-Specific Frameworks**: While GGUF provides universal compatibility across heterogeneous hardware, specialized frameworks and silicon architectures extract maximum throughput by saturating memory bandwidth:
+
   * **NVIDIA CUDA & EXL2 / AWQ**: The enterprise baseline for discrete GPUs, offering maximum compute kernel optimization and specialized quantization formats (like EXL2) designed to saturate NVIDIA GDDR6/HBM memory channels (500 to 1,000+ GB/s), though constrained by physical PCIe VRAM limits (12GB-24GB on consumer cards).
   * **NVIDIA DGX Spark & Unified Grace Blackwell**: NVIDIA's compact deskside answer to the PCIe memory ceiling. Powered by the GB10 Grace Blackwell superchip, [The DGX Spark](https://www.nvidia.com/en-us/products/workstations/dgx-spark/) integrates a Blackwell GPU and 20-core Arm CPU sharing 128GB of coherent unified memory, allowing researchers to run and fine-tune 70B+ to 200B parameter models directly on a desk without enterprise rack infrastructure. Consider this an alternative to AMD's Strix Halo, but one that isn't quite as flexible as a Strix Halo can be found running Windows, Linux, and be an excuse to get a decently performant PC gaming rig.
   * **Apple MLX & Apple Silicon Ultra**: [Apple's MLX framework](https://github.com/ml-explore/mlx) is tailored specifically for Apple Silicon unified memory. By eliminating memory copies between CPU and GPU over ultra-wide unified memory buses, MLX delivers blistering local throughput. Apple's "Max" chips stream at 300 to 546 GB/s (up to 128GB RAM), while top-tier "Ultra" workstations (like the Mac Studio Ultra) pump an astounding **800 GB/s to 1.2 TB/s** across massive 192GB to 512GB unified memory pools: which is why AI researchers and enterprises willingly drop $7,000 to $10,000+ to run dense 70B+ and 120B+ models on a single quiet desktop.
   * **AMD ROCm / HIP & Strix Halo**: Historically constrained to Linux data center accelerators, AMD's ROCm software stack is finally receiving the consumer TLC, Windows driver maturation, and `llama.cpp` optimization needed to make unified x86 APUs shine. With the release of [ROCm 10.0](https://rocm.blogs.amd.com/ecosystems-and-partners/rocm-x-blog/README.html) (introducing the ROCm.AI stack, unified "TheRock" cross-platform build system, and up to 3.3x inference acceleration across Radeon and Ryzen APUs), AMD's **Strix Halo** architecture delivers **~256 to 273 GB/s** of unified memory bandwidth across a 256-bit bus with up to 128GB of RAM (and upcoming Gorgon Halo platforms scaling to 196GB), bringing high-speed local inference to portable form factors. This author runs an ASUS ROG Flow Z13 Strix Halo system with a "meager" 128GB of RAM (cry for me).
 
-More on these speeds and feeds below, just know this is the equivalence of speccing out a computer for GenAI nerds!
+More on these speeds and feeds below, just know this is the equivalent of speccing out a computer for GenAI nerds!
 
-```
+```text
 ┌────────────────────────────────────────────────────────────────────────┐
 │                   QUANTIZATION & BIT PRECISION SPECTRUM                │
 │                                                                        │
@@ -383,12 +392,15 @@ More on these speeds and feeds below, just know this is the equivalence of specc
 
 In traditional systems administration, CPU clock frequency governs performance. In local LLM inference, **memory bandwidth (GB/s) is the absolute governing bottleneck**.
 
-During token generation, an LLM operates sequentially: to predict token $T$, the compute engine must stream *every single model parameter* from memory into the processor cores. 
+During token generation, an LLM operates sequentially: to predict token `T`, the compute engine must stream *every single model parameter* from memory into the processor cores. 
+
 * If you run a 4.5 GB quantized model on standard dual-channel DDR5 system RAM (~60 GB/s bandwidth), your maximum generation speed is physically capped around 13 tokens per second (60 GB/s / 4.5 GB ≈ 13.3 t/s).
 * If you load that exact same model into dedicated GPU VRAM (such as GDDR6 at 500+ GB/s), your generation speed instantly accelerates to 80-100+ tokens per second.
 
 #### Calculating Real-World VRAM Requirements
+
 To prevent out-of-memory (OOM) crashes or performance-killing spillover into system paging files, calculate your required VRAM using this baseline formula:
+
 
 ```text
 Total VRAM Required ≈ Model Weight Size (GB) + KV Context Cache (GB) + Runtime Framework Overhead (1.0 - 1.5 GB)
