@@ -40,7 +40,7 @@
 2. **Identity Verification**:
    - Technicians **must** verify the caller's identity via manager callback, verified employee ID, or an approved SMS verification code before performing any manual reset.
 3. **Clearing Saved Credentials**:
-   - Instruct user to open Windows Credential Manager (`control keymgr.dll`) $\rightarrow$ Windows Credentials, and remove all entries under `Enterprise_SSO` and `MicrosoftOffice16`.
+   - Instruct user to open Windows Credential Manager (`control keymgr.dll`) → Windows Credentials, and remove all entries under `Enterprise_SSO` and `MicrosoftOffice16`.
 4. **Unlocking Account**:
    - Unlock the user in Active Directory. If password reset is required, set a temporary complex password with "User must change password at next logon" enabled.
 

@@ -8,6 +8,17 @@ description: I am one step ahead, well, maybe two. .
 
 <div class="card" markdown="1">
 
+<span class="badge badge-teal">Foundational</span>
+<span class="badge badge-green">GenAI</span>
+
+### [Module 0: Primer, Practical Use Cases & Dispelling Common Myths](/genai-for-tinkerers/Module0.html)
+
+The practical tinkerer's stance: approach LLMs as untrusted, non-deterministic engines. Grounded in our everyday vehicle metaphor, this primer examines why generative art became a cultural battleground, tracks capability velocity from early video artifacts, breaks down four tactical IT use cases, dispels persistent industry myths (RLHF agreeableness and cloud subpoena realities), and compares frontier cloud vs. local metal inference. Includes hands-on calibration exercises.
+
+</div>
+
+<div class="card" markdown="1">
+
 ### [Module 1: Foundational GenAI for the Tinkerer](/genai-for-tinkerers/Module1.html)
 
 Strip away the vendor hype: understand probabilistic token prediction, context bloat, clean-room datasets, and how to treat LLMs as untrusted black-box appliances.

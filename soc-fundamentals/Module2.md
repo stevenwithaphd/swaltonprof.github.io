@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Module 2 - Endpoint Defense
+title: "Module 2: Endpoint Defense"
 date: 2026-05-05
 description: The Endpoint, uh, finds a way. They move, painfully, dangerously. They always find a way. 
 ---
@@ -28,7 +28,7 @@ Endpoint defense is a massive operational domain, and while a SOC relies on a ti
 
 The modern endpoint encompasses any device capable of executing code or accessing corporate data, ranging from traditional desktop workstations and mobile devices to ephemeral cloud servers. You cannot defend an asset you do not know exists. This operational reality makes asset visibility the absolute foundation of any security program, which is why the Center for Internet Security (CIS) prioritizes the Inventory and Control of Enterprise Assets and Software as Controls 1 and 2 within the Critical 18 framework. If you want to review the actual control breakdown and Implementation Group 1 (IG1) baseline requirements, check out the [CIS Critical Security Controls](https://www.cisecurity.org/controls/cis-controls-list).
 
-While a SOC or MSSP typically operates downstream - focusing on alert triage and incident response rather than provisioning hardware - referencing these foundational controls is a tactical necessity. A SOC is functionally blind without asset context. When an alert fires, an analyst must instinctively know whether a compromised IP address belongs to a mission-critical database or a personal iPad on a guest network in order to prioritize containment. You cannot tune detection logic, effectively deploy EDR sensors, or isolate compromised hosts across an environment you have not accurately mapped.
+While a SOC or MSSP typically operates downstream, focusing on alert triage and incident response rather than provisioning hardware, referencing these foundational controls is a tactical necessity. A SOC is functionally blind without asset context. When an alert fires, an analyst must instinctively know whether a compromised IP address belongs to a mission-critical database or a personal iPad on a guest network in order to prioritize containment. You cannot tune detection logic, effectively deploy EDR sensors, or isolate compromised hosts across an environment you have not accurately mapped.
 
 ### Implementation Group 1 Constraints and Asset Visibility
 

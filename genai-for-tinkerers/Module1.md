@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Module 1 - Foundational GenAI for the Tinkerer
+title: "Module 1: Foundational GenAI for the Tinkerer"
 date: 2026-08-26
-description: '"I don''t know what half these relays do, but banging on the dashboard gets us to hyperspace." - Han Solo'
+description: '"I don''t know what half these relays do, but banging on the dashboard gets us to hyperspace." (Han Solo)'
 ---
 
 <div class="content-header">Module 1: Foundational GenAI for the Tinkerer</div>
@@ -33,7 +33,7 @@ Just as Security Operations Centers evolve through messy, ad hoc stages before e
   This reckless usage produces immediate real-world fallout:
 
   * **Fabricated Case Law**: In the landmark [*Mata v. Avianca*](https://en.wikipedia.org/wiki/Mata_v._Avianca,_Inc.) sanctions, attorneys were fined by a federal judge for submitting court briefs filled with fictitious judicial opinions hallucinated by ChatGPT.
-  * **Subpoenaed Prompt Logs & Destroyed Credibility**: In the 2026 litigation over the fatal Watson Grinding facility explosion, plaintiffs' counsel discovered that a key defense expert witness used ChatGPT to write 85-90% of his liability report. Opposing counsel subpoenaed 350 pages of raw ChatGPT session logs, exposing prompts where the expert explicitly instructed the AI to *"show how 3M is 0% at fault"*. The exposed logs dismantled the defense's credibility, culminating in a $61.5 million jury verdict ([Forbes, 2026](https://www.forbes.com/sites/larsdaniel/2026/08/26/expert-witness-asked-chatgpt-to-show-0-fault-the-wrong-way-for-experts-to-use-ai/)).
+  * **Subpoenaed Prompt Logs & Destroyed Credibility**: In the 2026 litigation over the fatal Watson Grinding facility explosion, plaintiffs' counsel discovered that a key defense expert witness used ChatGPT to write 85-90% of his liability report. Opposing counsel subpoenaed 350 pages of raw ChatGPT session logs, exposing prompts where the expert explicitly instructed the AI to *"show how 3M is 0% at fault"*. The exposed logs dismantled the defense's credibility, culminating in a \$61.5 million jury verdict ([Forbes, 2026](https://www.forbes.com/sites/larsdaniel/2026/08/26/expert-witness-asked-chatgpt-to-show-0-fault-the-wrong-way-for-experts-to-use-ai/)).
   * **No Attorney-Client Privilege**: Courts have consistently ruled that feeding proprietary corporate data or legal strategy into public web chatbots waives confidentiality and is fully discoverable during litigation. **Remember**, if you aren't paying, you are the product; yet another call-back from years gone by when "free services" were first entering the internet.
 * **Stage 2: Vendor Feature Bloat & The Sparkle Panic**: Software vendors rush to capitalize on the market surge. Suddenly, every SaaS platform, ticketing system, and firewall dashboard rolls out an "AI Assistant" denoted by glowing sparkle icons. Most of these initial integrations are shallow wrappers around generic public APIs with zero transparency regarding model provenance, token retention, or security boundaries. Even worse, to a capable IT Generalist or Security Practitioner, many of these tools are effectively things they could build themselves with a weekend and some elbow grease.
 * **Stage 3: Corporate Policy Crackdown**: Security and legal teams discover sensitive data leaks and panic. Executive leadership issues blanket bans on all AI tools, blocking consumer domains at the web proxy. However, because AI provides undeniable productivity gains, employees circumvent the blocks using personal mobile hotspots or unsecured private connections, driving AI usage further underground into an unmonitored shadow IT operational hazard. This is the most dangerous time as it creates a lack of visibility into how your organization is actually using these powerful tools and breeds a culture of secrecy that can extend to more questionable outcomes as well, making for a more compromised organization than before.
@@ -45,7 +45,7 @@ Understanding where your organization sits in this evolution helps you avoid com
 
 # The AI Mechanic: A Grounded Mental Model
 
-To make sense of Generative AI without drowning in academic abstraction or vendor marketing, we use a single, grounded engineering analogy: the relationship between **The Vehicle**, **The Automotive Designer**, and **The Mechanic**.
+Building on the orientation in [Module 0](/genai-for-tinkerers/Module0.html), to make sense of Generative AI without drowning in academic abstraction or vendor marketing, we anchor our technical breakdown in our core engineering analogy: the relationship between **The Vehicle**, **The Automotive Designer**, and **The Mechanic**.
 
 In modern engineering, Computer Science and IT Operations mirror the dynamic between theoretical automotive designers and hands-on shop mechanics:
 
@@ -57,7 +57,7 @@ An experienced mechanic doesn't need a PhD in metallurgy or petroleum chemistry 
 
 ![The Agentic Vehicle Architecture Blueprint](/genai-for-tinkerers/images/agentic_vehicle_blueprint.jpg){: style="display: block; width: 100%; max-width: 900px; margin: 0 auto 1.75rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.25);" }
 
-### Core Principles for the AI Mechanic
+## Core Principles for the AI Mechanic
 
 1. **First Principles & Healthy Skepticism**: First principles still rule. You don't blindly trust a third-party part off the shelf; you test tolerances, perform multi-faceted threat modeling, and verify how components behave under load.
 2. **From Oil Changes to Custom Fabrications**: You can start with basic maintenance (querying web chat) and progress to building complete custom off-road rigs (local model harnesses, deterministic polyglot tool runners, 4-Tier SQLite memory engines, and HITL safety gates).
@@ -135,17 +135,34 @@ This vector attention mechanism is the beating heart of the **Transformer** arch
 > **A Note on Technical Humility**:
 > Even I am citing transformer details that I do not understand fully. You do not need to be an expert to use this technology effectively and securely. What matters is **knowing what you don't know**, respecting the system's boundaries, and understanding the impact; much like knowing the difference between fuel types in our engine analogy without needing a degree in chemical engineering. Never trust anyone speaking in absolutes and remember that *"I don't know, but I will find out for you"* is the hallmark of a true senior engineer.
 
-## Next-Token Prediction & The Context Window
+## Next-Token Prediction, Logits & The Context Window
 
 At runtime, an LLM performs one foundational calculation over and over again: **it computes a probability distribution over the vocabulary for the next token, given the sequence of tokens that came before it.**
 
-Mathematically, the engine calculates the probability of each potential next token given the prior sequence:
+### A Quick Word on "Logits" (Or: Why You See This Term Everywhere)
+
+If you hang around GenAI documentation or technical papers, you will inevitably run into the term **logits**. To be completely honest, the deep linear algebra here is beyond what most of us need to care about on a daily basis (and frankly, beyond what I want to pretend I calculate by hand while debugging a server). But you *will* see it pop up when people talk about model outputs, temperature, and structured generation, so here is the high-level take:
+
+When the transformer finishes crunching your prompt tokens through its neural layers, it does not magically spit out percentages or English words. Instead, its final layer calculates a huge list of raw, unnormalized scores across its entire vocabulary: one score for every possible token the model knows. These raw scores are called **logits** (see [Logit on Wikipedia](https://en.wikipedia.org/wiki/Logit) and the foundational language modeling work by [Bengio et al., 2003](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)).
+
+Because raw logits are just arbitrary numbers (positive, negative, or zero), the engine runs them through a mathematical function called **Softmax** ([Softmax on Wikipedia](https://en.wikipedia.org/wiki/Softmax_function); see Section 3.4 of [Vaswani et al., 2017](https://arxiv.org/abs/1706.03762)), adjusted by your **temperature** setting. Softmax does the bookkeeping to convert those raw scores into friendly percentages that add up to 100%:
+
+```text
+Context Tokens ──► Transformer Layers ──► Raw Logits (Unnormalized Scores)
+                                                  │
+                                                  ▼  (Temperature Scaling)
+Sampled Next Token ◄── Normalized Distribution (%) ◄── Softmax Function
+```
+
+Once converted into probabilities, the engine samples the next token based on sampling strategies (such as Top-P, Top-K, or greedy selection):
 
 ```text
 [ "flour", "sugar", "pie", "blue" ]  ──►  LLM  ──►  P("berry")  = 88%
-                                                ├──►  P("bird")   =  4%
-                                                └──►  P("sky")    =  1%
+                                            ├──►  P("bird")   =  4%
+                                            └──►  P("sky")    =  1%
 ```
+
+Why should a tinkerer care about this? Because the model calculates logits across its entire vocabulary, unconstrained generation can easily wander into invalid formats. In Module 4, we will look at how mechanics use formal **grammars** (which compile to state transition graphs) to physically mask out invalid logits so the model can only emit valid JSON, and in Module 5, how execution **graphs** keep multi-step agent loops bounded.
 
 The model does not "think ahead" to the end of the sentence, nor does it look up facts in an internal relational database. It samples from a probability distribution shaped by its training weights and the exact context currently sitting in its memory buffer (the context window).
 
@@ -226,7 +243,7 @@ To maintain engineering control, every IT practitioner must internalize the fund
 
 # Section 1.2: Structuring Data, Hidden Context Bloat & Compression Risks (Part A / Week 1 Cont.)
 
-### Structuring Data for LLMs: JSON vs. Markdown vs. XML vs. HTML
+## Structuring Data for LLMs: JSON vs. Markdown vs. XML vs. HTML
 
 When designing agentic harnesses and formatting system prompts, how you structure data directly dictates token cost, processing latency, and instruction adherence. There is much to be discussed here, but for now just be aware they exist and, if you get advanced enough, you should be able to test with multiple to figure out what suits your workflows best.
 
@@ -240,7 +257,7 @@ Token Efficiency Hierarchy:
 Markdown (Most Efficient) > JSON (Strict Typing) > XML (Highest Isolation) > HTML (Severe Bloat)
 ```
 
-### The "Invisible Ceiling": Hidden Context Bloat in Commercial Harnesses
+## The "Invisible Ceiling": Hidden Context Bloat in Commercial Harnesses
 
 Cloud vendors actively advertise massive context windows (claiming 1-2M tokens while local models stretch to reach 256k tokens). While these numbers sound infinite, in practice you hit an invisible ceiling much sooner due to **hidden context bloat**:
 
@@ -261,7 +278,16 @@ Cloud vendors actively advertise massive context windows (claiming 1-2M tokens w
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-#### The Silent Compression Wall & Security Hazards
+### The Engine's Scratchpad: The KV-Cache (Key-Value Cache) & The VRAM Tax
+
+To understand why long context windows demand so much physical hardware, you have to understand the **KV-Cache (Key-Value Cache)**:
+
+* **What It Does**: At every single generation step, the transformer's attention mechanism must compare the new token against *every single preceding token* in the prompt. If the engine had to recompute the mathematical attention keys and values for every past token from scratch on every step, token generation would grind to an unworkable crawl. To keep generation fast, the inference engine caches these intermediate Key and Value vectors in high-speed memory: this is the **KV-Cache**.
+* **The VRAM Tax**: Unlike model weights (which are static on disk and in memory), the KV-cache **grows dynamically with every single token** added to the context window and with every concurrent user session.
+* **The Hardware Reality**: For an 8B model running in 16-bit precision, the model weights consume roughly 16GB of VRAM. But if you push a 32k or 128k context window into the session, the KV-cache can easily demand an *additional* 4GB to 16GB+ of VRAM just to store the memory of past tokens! 
+* In cloud datacenters, handling millions of tokens of KV-cache across thousands of simultaneous users is why providers rely on massive High-Bandwidth Memory (HBM) clusters and memory-paging architectures like PagedAttention. On local hardware (which we dive into in Module 4), exhausting your VRAM budget with KV-cache is the primary cause of sudden inference slowdowns and CUDA Out-Of-Memory (OOM) crashes.
+
+### The Silent Compression Wall & Security Hazards
 
 When a context window fills up, cloud harnesses do not crash; they silently execute **context pruning, sliding-window truncation, or auto-summarization** to stay within GPU memory limits:
 
@@ -269,14 +295,14 @@ When a context window fills up, cloud harnesses do not crash; they silently exec
 * **Loss of Forensic Fidelity**: Automated summarizers condense text by eliminating details. In a security incident investigation, the summarizer will drop exact microsecond timestamps, source IP addresses, and ephemeral error codes, destroying the forensic chain of custody.
 * **"Lost in the Middle" Attention Degradation**: Seminal research from Stanford and UC Berkeley ([*Lost in the Middle: How Language Models Use Long Contexts*](https://arxiv.org/abs/2307.03172)) proves that transformers pay the closest attention to tokens at the extreme beginning and extreme end of the context window. Information buried in the middle 60% of a massive prompt suffers from drastic recall degradation.
 
-### Frontier Model Modalities & Extended Reasoning
+## Frontier Model Modalities & Extended Reasoning
 
 Modern frontier models are bifurcated into two primary operational tiers:
 
 1. **Fast / Instruct Models (e.g., Gemini Flash, GPT-4o-mini)**: Engineered for low latency and high throughput. Ideal for straightforward data extraction, classification, syntax translation, and fast tool execution. They may have no or minimal thinking tokens and will therefore produce an answer much faster. This is generally the preferred operational mode for most tasks.
 2. **Extended Reasoning / Thinking Models (e.g., Gemini Thinking, OpenAI o1/o3-mini)**: Utilize internal chain-of-thought scratchpads before emitting final tokens. The model dynamically generates hidden planning tokens to evaluate edge cases, solve multi-step logic problems, and verify code correctness before answering.
 
-### Multimodal Generation & The Power of LoRAs (Low-Rank Adaptation)
+## Multimodal Generation & The Power of LoRAs (Low-Rank Adaptation)
 
 Generative AI extends far beyond plain text into image, audio, and video synthesis:
 
@@ -290,7 +316,7 @@ Generative AI extends far beyond plain text into image, audio, and video synthes
 > **Field Notes from the Server Room Floor**
 > * **The In-House Specialist**: Instead of relying solely on frontier models, you can train custom LoRA adapters on your organization's internal documentation and ticket data. This creates a purpose-built AI expert that outperforms generic cloud models on specialized tasks. Think of it like a custom tune to a base engine: it's the same underlying technology, but tweaked to your specific operational requirements.
 
-### Using GenAI as a Learning Accelerator
+## Using GenAI as a Learning Accelerator
 
 As an IT practitioner, one of the most powerful applications of Generative AI is using it as an interactive technical mentor:
 
@@ -310,7 +336,7 @@ As an IT practitioner, one of the most powerful applications of Generative AI is
 > [!IMPORTANT]
 > **16-Week Course Stopping Point**: Complete this assignment at the end of Week 1. In an 8-week course, complete during the mid-week lab session.
 
-### Lab 1A Deliverable: Prompt Conditioning & Drift Audit
+## Lab 1A Deliverable: Prompt Conditioning & Drift Audit
 
 1. **The Non-Deterministic Benchmark**:
    * Take a raw, 20-line unstructured log snippet you can understand.
@@ -327,7 +353,7 @@ As an IT practitioner, one of the most powerful applications of Generative AI is
 
 # Section 1.3: Introducing Local Models (Part B / Week 2)
 
-### Why Local Models Matter to the Systems Practitioner
+## Why Local Models Matter to the Systems Practitioner
 
 While frontier cloud models offer massive reasoning power, relying exclusively on third-party cloud APIs introduces severe operational risks:
 
@@ -354,14 +380,14 @@ Running open-weight models locally on your own workstations, servers, or mobile 
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-### The Local Model Toolchain
+## The Local Model Toolchain
 
 * **LM Studio (Desktop GUI)**: An intuitive desktop application for Windows, macOS, and Linux. Allows you to search Hugging Face, download quantized models with one click, chat locally, and spin up a local OpenAI-compatible REST server to connect external tools. "Baby's first harness" as it has different modes to expose knobs to you and has much of what you need to get started. Additionally, it will scope models to your hardware as to avoid a scenario where you download something that you can't feasibly run. You can find more information about the project at [https://lmstudio.ai/](https://lmstudio.ai/).
 * **Ollama (Headless Daemon / CLI)**: A lightweight, command-line runner that runs as a background service. Easily scripted with PowerShell, Bash, or Python, making it the industry standard for backend servers and automated pipelines. You can find more information about the project at [https://ollama.com/](https://ollama.com/). What you will most likely use if you start building out your own harness.
 * **PocketPal AI (On-Device Mobile)**: A fully open-source mobile application for iOS and Android that runs quantized Small Language Models (SLMs) directly on your smartphone's GPU and Neural Engine. You can find more information about the project at [https://github.com/a-ghorbani/pocketpal-ai](https://github.com/a-ghorbani/pocketpal-ai).
 * **Others**: The above three aren't the end of it. [Jan.ai](https://jan.ai/) is an open-source LM Studio, [`llama.cpp`](https://github.com/ggerganov/llama.cpp) is what Ollama is calling and may be recommended, while [vLLM](https://github.com/vllm-project/vllm) and [Open WebUI](https://github.com/open-webui/open-webui) also exist for those who want to go from tinkerers to builders. Just know that things are moving rapidly and opinions are strong!
 
-### Demystifying Quantization & The GGUF Format
+## Demystifying Quantization & The GGUF Format
 
 When a foundation model is trained in a supercomputer cluster, its weights (parameters) are calculated and stored in uncompressed 16-bit or 32-bit floating-point precision (`FP16` / `FP32`). At 16 bits per parameter, a modest 7-billion parameter model requires roughly **14 GB to 16 GB of raw VRAM** just to load its weights into memory, placing it completely out of reach for standard consumer workstations and laptops.
 
@@ -372,7 +398,7 @@ When a foundation model is trained in a supercomputer cluster, its weights (para
 
   * **NVIDIA CUDA & EXL2 / AWQ**: The enterprise baseline for discrete GPUs, offering maximum compute kernel optimization and specialized quantization formats (like EXL2) designed to saturate NVIDIA GDDR6/HBM memory channels (500 to 1,000+ GB/s), though constrained by physical PCIe VRAM limits (12GB-24GB on consumer cards).
   * **NVIDIA DGX Spark & Unified Grace Blackwell**: NVIDIA's compact deskside answer to the PCIe memory ceiling. Powered by the GB10 Grace Blackwell superchip, [The DGX Spark](https://www.nvidia.com/en-us/products/workstations/dgx-spark/) integrates a Blackwell GPU and 20-core Arm CPU sharing 128GB of coherent unified memory, allowing researchers to run and fine-tune 70B+ to 200B parameter models directly on a desk without enterprise rack infrastructure. Consider this an alternative to AMD's Strix Halo, but one that isn't quite as flexible as a Strix Halo can be found running Windows, Linux, and be an excuse to get a decently performant PC gaming rig.
-  * **Apple MLX & Apple Silicon Ultra**: [Apple's MLX framework](https://github.com/ml-explore/mlx) is tailored specifically for Apple Silicon unified memory. By eliminating memory copies between CPU and GPU over ultra-wide unified memory buses, MLX delivers blistering local throughput. Apple's "Max" chips stream at 300 to 546 GB/s (up to 128GB RAM), while top-tier "Ultra" workstations (like the Mac Studio Ultra) pump an astounding **800 GB/s to 1.2 TB/s** across massive 192GB to 512GB unified memory pools: which is why AI researchers and enterprises willingly drop $7,000 to $10,000+ to run dense 70B+ and 120B+ models on a single quiet desktop.
+  * **Apple MLX & Apple Silicon Ultra**: [Apple's MLX framework](https://github.com/ml-explore/mlx) is tailored specifically for Apple Silicon unified memory. By eliminating memory copies between CPU and GPU over wide unified memory buses, MLX provides excellent local throughput. Apple's "Max" chips stream at 300 to 546 GB/s (up to 128GB RAM), while top-tier "Ultra" workstations (like the Mac Studio Ultra) provide **800 GB/s to 1.2 TB/s** across unified memory pools (192GB to 512GB), making them capable of running dense 70B+ and 120B+ models locally on a single desktop without enterprise server infrastructure.
   * **AMD ROCm / HIP & Strix Halo**: Historically constrained to Linux data center accelerators, AMD's ROCm software stack is finally receiving the consumer TLC, Windows driver maturation, and `llama.cpp` optimization needed to make unified x86 APUs shine. With the release of [ROCm 10.0](https://rocm.blogs.amd.com/ecosystems-and-partners/rocm-x-blog/README.html) (introducing the ROCm.AI stack, unified "TheRock" cross-platform build system, and up to 3.3x inference acceleration across Radeon and Ryzen APUs), AMD's **Strix Halo** architecture delivers **~256 to 273 GB/s** of unified memory bandwidth across a 256-bit bus with up to 128GB of RAM (and upcoming Gorgon Halo platforms scaling to 196GB), bringing high-speed local inference to portable form factors. This author runs an ASUS ROG Flow Z13 Strix Halo system with a "meager" 128GB of RAM (cry for me).
 
 More on these speeds and feeds below, just know this is the equivalent of speccing out a computer for GenAI nerds!
@@ -388,7 +414,7 @@ More on these speeds and feeds below, just know this is the equivalent of specci
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-### The Memory Bandwidth Bottleneck & VRAM Math
+## The Memory Bandwidth Bottleneck & VRAM Math
 
 In traditional systems administration, CPU clock frequency governs performance. In local LLM inference, **memory bandwidth (GB/s) is the absolute governing bottleneck**.
 
@@ -397,19 +423,19 @@ During token generation, an LLM operates sequentially: to predict token `T`, the
 * If you run a 4.5 GB quantized model on standard dual-channel DDR5 system RAM (~60 GB/s bandwidth), your maximum generation speed is physically capped around 13 tokens per second (60 GB/s / 4.5 GB ≈ 13.3 t/s).
 * If you load that exact same model into dedicated GPU VRAM (such as GDDR6 at 500+ GB/s), your generation speed instantly accelerates to 80-100+ tokens per second.
 
-#### Calculating Real-World VRAM Requirements
+### Calculating Real-World VRAM Requirements
 
 To prevent out-of-memory (OOM) crashes or performance-killing spillover into system paging files, calculate your required VRAM using this baseline formula:
 
 
 ```text
-Total VRAM Required ≈ Model Weight Size (GB) + KV Context Cache (GB) + Runtime Framework Overhead (1.0 - 1.5 GB)
+Total VRAM Required ≈ Model Weight Size (GB) + KV Context Cache (GB) + Runtime Framework Overhead (1.0 to 1.5 GB)
 ```
 
 * **The Model Weights**: The static base footprint of the loaded `.gguf` file.
 * **The Key-Value (KV) Context Cache**: As a multi-turn conversation or log file expands, the model's self-attention mechanism stores past token states in an active memory buffer (the KV cache). In high-context models, an active 32K-token context window can consume an additional 1.5 GB to 3 GB of VRAM. If your physical memory cannot accommodate both the model and the expanding KV cache, inference will abruptly halt or drop off a cliff as memory offloads to system DDR.
 
-### Compute Backends & Hardware Topologies: PCIe vs. Unified Memory
+## Compute Backends & Hardware Topologies: PCIe vs. Unified Memory
 
 When evaluating hardware for local model deployment across your enterprise or lab environment, understanding memory architecture is critical:
 
@@ -423,9 +449,9 @@ When evaluating hardware for local model deployment across your enterprise or la
    * **Metal**: Apple's native hardware-accelerated compute API, fully supported by `llama.cpp`, Ollama, and LM Studio.
    * **Vulkan / ROCm / OpenCL**: Vendor-neutral backends enabling local hardware acceleration across AMD GPUs, Intel Arc graphics, and mobile Adreno/Mali silicon.
 
-### Small Language Models (SLMs: 1B to 7B Parameters)
+## Small Language Models (SLMs: 1B to 7B Parameters)
 
-A common misconception in enterprise IT is that running local AI requires an expensive $20,000 server equipped with multiple enterprise GPUs.
+A common misconception in enterprise IT is that running local AI requires an expensive \$20,000 server equipped with multiple enterprise GPUs.
 
 Thanks to rapid advancements in neural architecture and 4-bit quantization (GGUF), **Small Language Models (SLMs)** in the 1B to 7B parameter range (such as Llama 3.2 1B/3B, Qwen 2.5 Coder 1.5B/7B, and Gemma 2 2B) easily run on consumer hardware, standard laptops, and modern smartphones. While they lack the encyclopedic knowledge of 70B+ frontier models, they excel at specific, bounded IT tasks: parsing syslog streams, extracting IP addresses into structured JSON, and generating regex patterns.
 
@@ -433,29 +459,37 @@ For context, average human reading speed is roughly 8 tokens per second (t/s), s
 
 > [!TIP]
 > **Field Notes from the Server Room Floor**
-> * **Demystifying Hardware Requirements**: You don't need a $10,000 GPU cluster to run local AI. A modern laptop or even a smartphone can run a 1B-3B parameter model completely offline at 25+ tokens per second. I have run a harness locally on a 12th gen i7 ThinkPad pulling 60 watts and have run models on a 2080ti. Don't let lack of expensive hardware stop you from experimenting and getting your feet wet.
+> * **Demystifying Hardware Requirements**: You don't need a \$10,000 GPU cluster to run local AI. A modern laptop or even a smartphone can run a 1B-3B parameter model completely offline at 25+ tokens per second. I have run a harness locally on a 12th gen i7 ThinkPad pulling 60 watts and have run models on a 2080ti. Don't let lack of expensive hardware stop you from experimenting and getting your feet wet.
 > * **VRAM vs. System RAM**: When running local models, memory bandwidth is the primary bottleneck. If a model fits entirely within your GPU's dedicated VRAM, inference is near-instant. If it spills over into shared system DDR RAM, speed drops drastically. Always size your quantized GGUF models to fit comfortably within physical VRAM. Still, don't let this stop you from experimenting!
 
 ---
 
 # Hands-On Lab 1B: Local Model Exploration
 
-### Lab Exercise: Running Your First Local Engine
+## Lab Exercise: Running Your First Local Engine
 
-1. **Option A (Desktop Workstation - LM Studio / Ollama)**:
+1. **Option A (Desktop Workstation with LM Studio or Ollama)**:
    * Install [LM Studio](https://lmstudio.ai/) or [Ollama](https://ollama.com/).
    * Download a lightweight quantized model (e.g., `qwen2.5-coder-1.5b-instruct` or `llama-3.2-3b-instruct`).
    * Start the local server endpoint.
    * Send a test prompt containing 5 lines of Apache access logs and instruct the model: *"Extract the client IP, HTTP method, and status code into a JSON array."*
    * Record memory usage and tokens-per-second throughput.
-2. **Option B (Mobile Exploration - PocketPal AI)**:
+2. **Option B (Mobile Exploration with PocketPal AI)**:
    * Install **PocketPal AI** from the iOS App Store or Google Play Store.
    * Download a 1B quantized model (e.g., `Llama-3.2-1B-Instruct-Q4_K_M` or `Qwen2.5-1.5B`).
    * Enable **Airplane Mode** on your device (disconnecting all Wi-Fi and Cellular data).
    * Prompt the model to generate a Python script to scan open TCP ports.
    * Verify that inference completes 100% offline using your phone's neural processor.
 
-### Module Discussion Questions
+---
+
+# Looking Ahead to Module 2
+
+Now that you have run a raw engine and seen how next-token prediction, logits, and local quantization operate under the hood, our next challenge is precision control. An untrusted crate motor running on uncurated web text will sputter, hallucinate, and drift. In [Module 2: Grounded GenAI Usage: NotebookLM & Gems](/genai-for-tinkerers/Module2.html), we explore **fuel quality and driving guardrails**, using closed-domain grounding in NotebookLM and structured YAML system instructions in custom Gems to enforce strict operational boundaries and eliminate guesswork.
+
+---
+
+# Module Discussion Questions
 
 1. How does the "mechanic vs. automotive designer" analogy apply to IT generalists building custom agent harnesses rather than researching raw neural mathematics?
 2. What are the specific security and operational tradeoffs of using JSON versus XML versus Markdown when formatting system prompts and tool outputs?
@@ -463,9 +497,9 @@ For context, average human reading speed is roughly 8 tokens per second (t/s), s
 4. In what ways can an IT generalist use Generative AI to expand their technical understanding of unfamiliar systems while still maintaining healthy skepticism?
 
 <div class="module-nav">
-  <a href="/genai-for-tinkerers/" class="module-nav-link prev">
-    <span class="module-nav-label">Course Overview</span>
-    <span class="module-nav-title">← Course Syllabus</span>
+  <a href="/genai-for-tinkerers/Module0.html" class="module-nav-link prev">
+    <span class="module-nav-label">Previous Module</span>
+    <span class="module-nav-title">← Module 0: Primer, Practical Use Cases & Dispelling Common Myths</span>
   </a>
   <a href="/genai-for-tinkerers/Module2.html" class="module-nav-link next">
     <span class="module-nav-label">Next Module</span>

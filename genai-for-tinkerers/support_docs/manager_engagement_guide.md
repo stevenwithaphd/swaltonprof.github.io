@@ -35,7 +35,7 @@
 > 1. [Step 1 in clear, plain language]
 > 2. [Step 2 in clear, plain language]
 > 
-> *Please let me know if that gets you back up and running. If not, don't worry - I'm here with you until we get this fully resolved.*
+> *Please let me know if that gets you back up and running. If not, don't worry; I'm here with you until we get this fully resolved.*
 > 
 > *Best regards,*  
 > *[Technician Name]*  

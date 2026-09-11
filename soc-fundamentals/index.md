@@ -18,7 +18,7 @@ This primer isn't required, but it explains my thoughts in writing this course a
 
 ### [Module 1: Introduction to the SOC](/soc-fundamentals/Module1.html)
 
-What a Security Operations Center actually does once you strip away Hollywood tropes and vendor hype. Covers the organizational emergence of a SOC, physical/logical architectures, staffing hierarchies (Tier 1–3, Engineers, Architects, Managers, CISO), and operational responsibilities (MITRE ATT&CK/D3FEND, reactive triage, threat hunting, and compliance).
+What a Security Operations Center actually does once you strip away Hollywood tropes and vendor hype. Covers the organizational emergence of a SOC, physical/logical architectures, staffing hierarchies (Tier 1-3, Engineers, Architects, Managers, CISO), and operational responsibilities (MITRE ATT&CK/D3FEND, reactive triage, threat hunting, and compliance).
 
 </div>
 

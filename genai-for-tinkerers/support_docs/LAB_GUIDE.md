@@ -27,7 +27,7 @@
 ### Part 1: Configuring the Custom Gem in Google Gemini
 
 1. Navigate to **Google Gemini** ([gemini.google.com](https://gemini.google.com)).
-2. In the left navigation sidebar, click on **Gems** $\rightarrow$ **New Gem** (or **Gem Manager**).
+2. In the left navigation sidebar, click on **Gems** → **New Gem** (or **Gem Manager**).
 3. Set the Gem Name: `Tier 1.5 Help Desk Mentor`.
 4. Open [helpdesk_mentor_gem_template.yaml](./helpdesk_mentor_gem_template.yaml), copy the entire YAML content, and paste it into the **Instructions** box.
 5. In the **Knowledge** section (if supported in your Google Workspace tier), upload:
@@ -50,7 +50,7 @@
 ```text
 Help me triage this incoming ticket from user 'Eleanor Vance':
 
-Ticket Subject: Cannot connect to VPN from home - getting error AUTH_RADIUS_TIMEOUT
+Ticket Subject: Cannot connect to VPN from home: getting error AUTH_RADIUS_TIMEOUT
 Ticket Body:
 "I am trying to log into the corporate VPN from home to finish a critical quarterly report, but the client gets stuck on 'Securing connection' and then gives me an AUTH_RADIUS_TIMEOUT error. I need this fixed immediately!"
 ```

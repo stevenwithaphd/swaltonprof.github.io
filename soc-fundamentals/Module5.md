@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Module 5 - Tooling
+title: "Module 5: Tooling"
 date: 2026-08-21
 description: Logging is an ouroboros, What happened before will happen again.
 ---
@@ -173,7 +173,7 @@ When configuring threat intelligence in your SOC stack, [David Bianco's Pyramid 
 ```
 
 * **Atomic Indicators (Hashes, IPs, Domains):** These occupy the base of the pyramid. They are trivially easy for an attacker to change. Altering a single byte in a payload creates a completely new hash *(simple as echo LOL >> filename.txt)* and spinning up a new cloud VPS provides a fresh IP address. Blocking these is cheap and straightforward, but building a detection strategy solely around static atomic indicators leaves the SOC in an endless game of whack-a-mole where that time is better spent on higher impact actions. This is also the layer where your dynamic tools and feeds should be blocking most things to take the strain off your analysts. 
-* **Behavioral Indicators (Tools, Tactics, Techniques, and Procedures - TTPs):** These sit at the top of the pyramid. An adversary's behavioral patterns, such as dumping LSASS memory for credentials, using living-off-the-land binaries (LOLBins) like PowerShell for discovery, or modifying specific registry keys for persistence, are difficult and expensive for an attacker to re-engineer. Detections written to identify suspicious behavior remain effective long after specific IP addresses and hashes have been retired.
+* **Behavioral Indicators (Tools, Tactics, Techniques, and Procedures: TTPs):** These sit at the top of the pyramid. An adversary's behavioral patterns, such as dumping LSASS memory for credentials, using living-off-the-land binaries (LOLBins) like PowerShell for discovery, or modifying specific registry keys for persistence, are difficult and expensive for an attacker to re-engineer. Detections written to identify suspicious behavior remain effective long after specific IP addresses and hashes have been retired.
 
 ### Ingestion Hygiene: Avoiding Telemetry Poisoning and Alert Fatigue
 

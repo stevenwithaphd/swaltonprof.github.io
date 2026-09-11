@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Module 2 - Grounded GenAI Usage - NotebookLM & Gems
+title: "Module 2: Grounded GenAI Usage: NotebookLM & Gems"
 date: 2026-09-02
-description: "I know Kung Fu, but only if you upload the PDF first. - Duo, just before receiving a 'kill -9' from an Agent."
+description: "I know Kung Fu, but only if you upload the PDF first. (Duo, just before receiving a 'kill -9' from an Agent.)"
 ---
 
 <div class="content-header">Module 2: Grounded GenAI Usage: NotebookLM & Gems</div>
@@ -55,7 +55,7 @@ In [Module 1](/genai-for-tinkerers/Module1.html), we established that the LLM is
 
 ---
 
-## Schedule & Semester Pacing
+# Schedule & Semester Pacing
 
 This module is split into two sections with a natural **mid-module stopping point**:
 
@@ -66,7 +66,7 @@ This module is split into two sections with a natural **mid-module stopping poin
 
 ---
 
-## Module Overview & Objectives
+# Module Overview & Objectives
 
 In security and enterprise IT operations, making an operational decision based on hallucinated data can lead to severed network trunks, locked-out domain admins, or active breach exploitation. This module introduces **Grounded Intelligence**: using specialized frontier environments that mathematically constrain LLM output to verified organizational knowledge.
 
@@ -173,12 +173,12 @@ NotebookLM provides a left-hand **Sources** panel displaying every document, URL
 
 ---
 
-## Mid-Module Checkpoint: Homework & Lab 2A
+# Mid-Module Checkpoint: Homework & Lab 2A
 
 > [!IMPORTANT]
 > **16-Week Course Stopping Point**: Deliver this assignment at the end of Week 3. In an 8-week course, complete during the mid-week lab session.
 
-### Lab 2A Deliverable: Closed-Domain Policy Audit & Briefing
+## Lab 2A Deliverable: Closed-Domain Policy Audit & Briefing
 
 1. **Source Ingestion**: Create a NotebookLM project containing:
    * [NIST CSF 2.0 Core Framework](https://www.nist.gov/cyberframework).
@@ -413,24 +413,24 @@ Let us observe how this Gem processes a realistic incoming ticket:
 > **Input Prompt Issued to Gem**:  
 > Help me triage this incoming ticket from user 'Eleanor Vance':  
 > 
-> * **Ticket Subject**: Cannot connect to VPN from home - getting error `AUTH_RADIUS_TIMEOUT`  
+> * **Ticket Subject**: Cannot connect to VPN from home: getting error `AUTH_RADIUS_TIMEOUT`  
 > * **Ticket Body**: *"I am trying to log into the corporate VPN from home to finish a critical quarterly report, but the client gets stuck on 'Securing connection' and then gives me an AUTH_RADIUS_TIMEOUT error. I need this fixed immediately!"*
 
 When evaluated against the Gem's instructions and uploaded knowledge files, the Gem produces the structured four-section deliverable shown below. Note that this is the actual output generated during my testing in writing this module; due to the non-deterministic nature of LLMs, your exact wording may vary slightly across runs, but the structural fields, SOP grounding, and contact lookups should consistently hit the same core topics.
 
-#### 1. Mentor Diagnostic & Action Plan (Internal for Tech)
+**Output Section 1: Mentor Diagnostic & Action Plan (Internal for Tech)**
 
 ![Mentor Diagnostic and Action Plan](/genai-for-tinkerers/images/helpdesk_gem_output_section1.png){: style="display: block; width: 100%; max-width: 700px; margin: 1rem auto 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
 
-#### 2. Draft Customer Response (Ready for Tech Review)
+**Output Section 2: Draft Customer Response (Ready for Tech Review)**
 
 ![Draft Customer Response](/genai-for-tinkerers/images/helpdesk_gem_output_section2.png){: style="display: block; width: 100%; max-width: 700px; margin: 1rem auto 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
 
-#### 3. Ticketing System Record
+**Output Section 3: Ticketing System Record**
 
 ![Ticketing System Record](/genai-for-tinkerers/images/helpdesk_gem_output_section3.png){: style="display: block; width: 100%; max-width: 700px; margin: 1rem auto 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
 
-#### 4. Mentor Advisory Notice
+**Output Section 4: Mentor Advisory Notice**
 
 ![Mentor Advisory Notice](/genai-for-tinkerers/images/helpdesk_gem_output_section4.png){: style="display: block; width: 100%; max-width: 700px; margin: 1rem auto 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
 
@@ -485,13 +485,13 @@ Because Custom Gems operate inside a conversational web interface rather than an
 
 ---
 
-## Hands-On Lab 2B: Build Your Own Custom Production Gem
+# Hands-On Lab 2B: Build Your Own Custom Production Gem
 
 Now that we have walked through the architecture, grounded citations, and output verification of our reference **Tier 1.5 Help Desk Mentor** (which you can explore in detail inside the [Lab 2B Reference Guide](/genai-for-tinkerers/support_docs/LAB_GUIDE.md)), it is time to build your own.
 
 This lab is your hands-on sandbox to experiment, fail, tune, and deploy a custom Gem tailored to a real problem in your daily work, home lab, academic studies, or personal life.
 
-### Lab Objectives & Requirements
+## Lab Objectives & Requirements
 
 1. **Select Your Operational Domain**:
    Identify a specific, repetitive workflow that benefits from grounded context and structured outputs (e.g., a home lab firewall assistant, an on-call alert triage helper, a certification study coach, a personal finance auditor, or an employee onboarding copilot).
@@ -502,7 +502,7 @@ This lab is your hands-on sandbox to experiment, fail, tune, and deploy a custom
 4. **Stress-Test Edge Cases & Fallbacks**:
    Submit at least three realistic test prompts to your Gem. Intentionally test at least one missing-data scenario to confirm that your explicit fallback rules trigger properly rather than synthesizing fabricated information.
 
-### Lab Deliverables
+## Lab Deliverables
 
 * **Your YAML Prompt Specification**: Export or save your raw `custom_gem.yaml` system instructions.
 * **Configuration Proof**: A screenshot of your custom Gem configured inside Gem Manager with knowledge files uploaded.
@@ -510,7 +510,7 @@ This lab is your hands-on sandbox to experiment, fail, tune, and deploy a custom
 
 ---
 
-## Module Discussion Questions
+# Module Discussion Questions
 
 1. Why is structured YAML significantly more token-efficient and deterministic than conversational English when authoring complex system prompts?
 2. In customer-facing IT support, how does enforcing positive output schemas (such as the Manager's Engagement Guide) protect an organization's reputation compared to unconstrained chat outputs?
@@ -522,10 +522,10 @@ This lab is your hands-on sandbox to experiment, fail, tune, and deploy a custom
     <span class="module-nav-label">Previous Module</span>
     <span class="module-nav-title">← Module 1: Foundational GenAI for the Tinkerer</span>
   </a>
-  <a href="/genai-for-tinkerers/Module3.html" class="module-nav-link next">
+  <div class="module-nav-link next" style="opacity: 0.6; pointer-events: none;">
     <span class="module-nav-label">Next Module</span>
-    <span class="module-nav-title">Module 3: Agentic IDEs & Pair Programming →</span>
-  </a>
+    <span class="module-nav-title">Mod 3 coming soon</span>
+  </div>
 </div>
 
 </div>

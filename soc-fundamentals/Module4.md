@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Module 4 - Network Defense
+title: "Module 4: Network Defense"
 date: 2026-05-26
 description: The network is the battlefield. Love is also a battlefield they say, fairness exists in neither.
 ---
@@ -11,7 +11,7 @@ description: The network is the battlefield. Love is also a battlefield they say
 
 ![Module 4: Network Defense](/soc-fundamentals/images/banner_module4.jpg){: style="display: block; width: 100%; max-width: 900px; margin: 0 auto 1.75rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.25);" }
 
-# Network Defense - From LAN Parties to Enterprise Perimeters
+# Network Defense: From LAN Parties to Enterprise Perimeters
 
 The endpoint might be the ultimate target, but the network is the battlefield. While industry marketing heavily promotes zero-trust architectures and perimeter-less environments, the operational reality is that data must still traverse a physical or logical wire. Positive security is nice, it certainly is achievable, but it is difficult to come by and requires strong governance and the backing of the entire IT group to tell users "no, you can't access whatever you want on a company-issued device." If you cannot monitor and control that transit layer, your SOC is functionally blind to lateral movement and data exfiltration. Network defense relies on establishing rigid choke points. Your firewalls, proxies, and traffic taps force adversaries into heavily monitored corridors. In this module, we will examine how to manage the cryptography required to verify trust, how to analyze raw packet captures when your security dashboards lie, and how to maintain enterprise availability against automated attacks. You cannot defend an environment if you do not fundamentally understand how its components communicate. The best part, because the wire doesn't lie it is one of the best troubleshooting skills to have!
 

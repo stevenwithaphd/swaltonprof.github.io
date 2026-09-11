@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home - Dr. Steven Walton
+title: "Home: Dr. Steven Walton"
 description: IT, Cybersecurity, and GenAI educational content and labs by a lifelong tinkerer, Dr. Steven Walton, CISSP.
 ---
 

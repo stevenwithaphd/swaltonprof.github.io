@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Module 3 - Mobile Defense
+title: "Module 3: Mobile Defense"
 date: 2026-05-07
 description: And now the mobile devices have breached the network!
 ---
