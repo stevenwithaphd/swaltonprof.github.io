@@ -8,8 +8,9 @@ description: I am one step ahead, well, maybe two. .
 
 <div class="card" markdown="1">
 
-<span class="badge badge-teal">Foundational</span>
-<span class="badge badge-green">GenAI</span>
+<span class="badge badge-slate">Orientation Primer</span>
+<span class="badge badge-green">Frontier vs. Local Metal</span>
+<span class="badge badge-amber">Calibration Warm-Up</span>
 
 ### [Module 0: Primer, Practical Use Cases & Dispelling Common Myths](/genai-for-tinkerers/Module0.html)
 
@@ -19,6 +20,10 @@ The practical tinkerer's stance: approach LLMs as untrusted, non-deterministic e
 
 <div class="card" markdown="1">
 
+<span class="badge badge-blue">The Crate Motor</span>
+<span class="badge badge-indigo">Tokens & KV-Cache Math</span>
+<span class="badge badge-amber">Hands-On Lab</span>
+
 ### [Module 1: Foundational GenAI for the Tinkerer](/genai-for-tinkerers/Module1.html)
 
 Strip away the vendor hype: understand probabilistic token prediction, context bloat, clean-room datasets, and how to treat LLMs as untrusted black-box appliances.
@@ -26,6 +31,10 @@ Strip away the vendor hype: understand probabilistic token prediction, context b
 </div>
 
 <div class="card" markdown="1">
+
+<span class="badge badge-teal">Clean Fuel & Cruise Control</span>
+<span class="badge badge-purple">NotebookLM & YAML Gems</span>
+<span class="badge badge-amber">Hands-On Lab</span>
 
 ### [Module 2: Grounded GenAI Usage: NotebookLM & Gems](/genai-for-tinkerers/Module2.html)
 
@@ -35,6 +44,10 @@ Moving from unconstrained open-web interaction to more targeted interactions and
 
 <div class="card" markdown="1">
 
+<span class="badge badge-purple">Agentic Chassis</span>
+<span class="badge badge-blue">MCP & Planning Loops</span>
+<span class="badge badge-amber">Hands-On Lab</span>
+
 ### [Module 3: Agentic IDEs & AI Pair Programming (Coming Soon)](/genai-for-tinkerers/Module3.html)
 
 Moving from reactive autocomplete and lots of copy/pasting to autonomous agent loops in modern IDEs. Build custom deterministic skills, execute planning workflows, and learn how to free up time to do more important things like learning more, or even taking a break.
@@ -42,6 +55,10 @@ Moving from reactive autocomplete and lots of copy/pasting to autonomous agent l
 </div>
 
 <div class="card" markdown="1">
+
+<span class="badge badge-green">The Engine Swap</span>
+<span class="badge badge-indigo">GGUF Quantization & VRAM</span>
+<span class="badge badge-amber">Hands-On Lab</span>
 
 ### [Module 4: Local Open-Weight Inference & Hardware Architecture (Coming Soon)](/genai-for-tinkerers/Module4.html)
 
@@ -51,6 +68,10 @@ Taking full control of your inference stack. Profile VRAM math, navigate GGUF qu
 
 <div class="card" markdown="1">
 
+<span class="badge badge-purple">Drivetrain & Brakes</span>
+<span class="badge badge-green">Ollama & Tool Runners</span>
+<span class="badge badge-amber">Hands-On Lab</span>
+
 ### [Module 5: Custom Autonomous Agent Harnesses & Tool Runners (Coming Soon)](/genai-for-tinkerers/Module5.html)
 
 Building harnesses with Ollama and PowerShell/Python tool runners. Maximize the capabilities of an on-device model via targeted skills and constraints that you can have near full control over.
@@ -58,6 +79,10 @@ Building harnesses with Ollama and PowerShell/Python tool runners. Maximize the 
 </div>
 
 <div class="card" markdown="1">
+
+<span class="badge badge-indigo">Persistent Flight Recorder</span>
+<span class="badge badge-teal">SQLite WAL & Hybrid RRF</span>
+<span class="badge badge-amber">Hands-On Lab</span>
 
 ### [Module 6: Enterprise Cognitive Memory & Hybrid RAG Architecture (Coming Soon)](/genai-for-tinkerers/Module6.html)
 
@@ -67,6 +92,10 @@ Constructing persistent memory engines and your own personal GenAI solution to c
 
 <div class="card" markdown="1">
 
+<span class="badge badge-slate">Bull-Bar & Armor</span>
+<span class="badge badge-blue">Prompt Guard & Triage</span>
+<span class="badge badge-amber">Hands-On Lab</span>
+
 ### [Module 7: AI-Augmented Workflows & Automation (Coming Soon)](/genai-for-tinkerers/Module7.html)
 
 Explore ways to turn everything you have created thus far into an agentic agent that can help lighten every day tasks and maybe one day, when you need it,  help you with much more critical tasks.  
@@ -74,6 +103,10 @@ Explore ways to turn everything you have created thus far into an agentic agent 
 </div>
 
 <div class="card" markdown="1">
+
+<span class="badge badge-teal">State Inspection</span>
+<span class="badge badge-purple">Enterprise Production</span>
+<span class="badge badge-amber">Capstone Project</span>
 
 ### [Module 8: Capstone: Enterprise AI Agent & Course Wrap-Up (Coming Soon)](/genai-for-tinkerers/Module8.html)
 
