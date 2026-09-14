@@ -1,4 +1,8 @@
 name: swalton.prof
 description: Cybersecurity & IT Education
+url: "https://swalton.prof"
 markdown: kramdown
 theme: minima
+
+plugins:
+  - jekyll-sitemap
