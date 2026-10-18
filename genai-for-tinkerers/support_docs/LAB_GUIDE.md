@@ -37,7 +37,7 @@
    *(Note: If your tier does not support persistent file attachments in Gem Manager, you can upload or paste them into the conversation session when testing).*
 6. Click **Save / Create Gem**.
 
-![Tier 1.5 Help Desk Technical Mentor Gem Configuration](/genai-for-tinkerers/images/helpdesk_mentor_gem_setup.png){: style="display: block; width: 100%; max-width: 650px; margin: 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
+![Tier 1.5 Help Desk Technical Mentor Gem Configuration](/genai-for-tinkerers/images/helpdesk_mentor_gem_setup.webp){: style="display: block; width: 100%; max-width: 650px; margin: 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
 
 ---
 

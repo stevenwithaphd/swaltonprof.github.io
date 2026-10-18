@@ -48,7 +48,7 @@ Moving from unconstrained open-web interaction to more targeted interactions and
 <span class="badge badge-blue">MCP & Planning Loops</span>
 <span class="badge badge-amber">Hands-On Lab</span>
 
-### [Module 3: Agentic IDEs & AI Pair Programming (Coming Soon)](/genai-for-tinkerers/Module3.html)
+### [Module 3: Agentic IDEs & AI Pair Programming](/genai-for-tinkerers/Module3.html)
 
 Moving from reactive autocomplete and lots of copy/pasting to autonomous agent loops in modern IDEs. Build custom deterministic skills, execute planning workflows, and learn how to free up time to do more important things like learning more, or even taking a break.
 

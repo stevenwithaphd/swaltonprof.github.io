@@ -9,7 +9,7 @@ description: And now the mobile devices have breached the network!
 
 <div class="card" markdown="1">
 
-![Module 3: Mobile Defense](/soc-fundamentals/images/banner_module3.jpg){: style="display: block; width: 100%; max-width: 900px; margin: 0 auto 1.75rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.25);" }
+![Module 3: Mobile Defense](/soc-fundamentals/images/banner_module3.webp){: style="display: block; width: 100%; max-width: 900px; margin: 0 auto 1.75rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.25);" }
 
 # Mobile Defense and BYOD Realities
 
@@ -34,11 +34,11 @@ Because the SOC lacks deep process-level visibility on personal mobile devices, 
 
 ## Service-Level Access Controls
 
-When an organization cannot dictate the security posture of the physical hardware, it must dictate the terms of engagement at the application boundary. Service-level access controls shift the defensive perimeter from the endpoint to the identity provider and the Software-as-a-Service (SaaS) platform itself. These configurations act as highly effective compensating mechanisms, ensuring that even if an attacker completely compromises an unmanaged personal device, they face immediate friction when attempting to access corporate data silos.
+When an organization cannot dictate the security posture of the physical hardware, it must dictate the terms of engagement at the application boundary. Service-level access controls shift the defensive perimeter from the endpoint to the identity provider and the Software-as-a-Service (SaaS) platform itself. These configurations act as highly effective compensating mechanisms, ensuring that even if an Attacker completely compromises an unmanaged personal device, they face immediate friction when attempting to access corporate data silos.
 
-* **IP Allowlisting and Network Restrictions:** Configuring critical business applications to only accept authentications originating from approved corporate IP addresses or managed VPN gateways provides an immediate, hard barrier against external credential theft. Even if an adversary successfully harvests a user's password and intercepts an MFA token, the SaaS platform will silently drop the connection if the request originates from an untrusted residential ISP or a foreign network.
+* **IP Allowlisting and Network Restrictions:** Configuring critical business applications to only accept authentications originating from approved corporate IP addresses or managed VPN gateways provides an immediate, hard barrier against external credential theft. Even if an Adversary successfully harvests a user's password and intercepts an MFA token, the SaaS platform will silently drop the connection if the request originates from an untrusted residential ISP or a foreign network.
 * **Identity-Driven Conditional Access:** The Identity Provider (IdP) must evaluate the specific context of every login attempt before granting access. By enforcing rules regarding impossible travel, unusual authentication times, or unapproved browser types, the IT department can programmatically block suspicious activity. If an employee attempts to authenticate to the corporate database using an unmanaged personal tablet, conditional access policies can evaluate that lack of device management and automatically deny the connection or restrict the session to a heavily monitored, read-only state. For an enterprise blueprint on how context-aware policies work across identity providers, take a look at the [Microsoft Entra Conditional Access Documentation](https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview).
-* **Vendor-Enforced Tenant Restrictions:** Many enterprise cloud providers allow administrators to dictate which specific organizational tenants can be accessed from corporate networks. This network-level control prevents a malicious insider or compromised user from utilizing an authorized web browser to authenticate into their personal cloud storage instance, effectively halting a trivial data exfiltration vector at the service layer.
+* **Vendor-Enforced Tenant Restrictions:** Many enterprise cloud providers allow Administrators to dictate which specific organizational tenants can be accessed from corporate networks. This network-level control prevents a malicious insider or compromised user from utilizing an authorized web browser to authenticate into their personal cloud storage instance, effectively halting a trivial data exfiltration vector at the service layer.
 
 # The Reality of Mobile Device Security
 

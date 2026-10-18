@@ -31,6 +31,3 @@ Instead, I treat GenAI the way any experienced worker treats a high-powered tool
 If you prefer reading the rendered courses, modules, and labs instead of browsing raw Markdown:
 
 👉 **[https://swalton.prof](https://swalton.prof)**
-
----
-*Built with Jekyll, hosted on GitHub Pages, and crafted with digital dust.*

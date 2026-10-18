@@ -1,0 +1,6 @@
+{
+  "*.{png,jpg,jpeg}": [
+    "node scripts/optimize-images.mjs"
+  ]
+}
+

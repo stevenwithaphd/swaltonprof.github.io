@@ -27,7 +27,7 @@ description: "I know Kung Fu, but only if you upload the PDF first. (Duo, just b
 > 
 > This is where our vehicle metaphor becomes critical to understand:
 > * **Platform Sharing & Badge Engineering (Closed-weight model ecosystems)**: In some cases, enterprise AI is like Lexus being a luxury badge over Toyota mechanicals; in other cases, it is like Ford and GM jointly engineering the exact same transmission. Microsoft Copilot is essentially an OpenAI engine plumbed into the Microsoft Graph; Apple Intelligence routes complex queries out to OpenAI (with announced plans to support additional third-party frontier providers like Google Gemini); ServiceNow Now Assist and Salesforce Einstein wrap third-party frontier models in proprietary enterprise dashboards.
->   * *The Chassis & Harness Dictates Performance*: Any driver understands that the exact same engine feels completely different in a lightweight sports car versus a heavy work truck. The operational variance you experience across commercial web UIs is simply **harness-constrained** by how the vendor packaged and tuned the interface.
+>   * *The Chassis & Harness Dictates Performance*: Any Driver understands that the exact same engine feels completely different in a lightweight sports car versus a heavy work truck. The operational variance you experience across commercial web UIs is simply **harness-constrained** by how the vendor packaged and tuned the interface.
 >   * *Shared Failure Modes*: Just as a defective part in a shared transmission causes the same transmission failures across different car brands, underlying model blind spots (prompt injection vulnerabilities, context degradation, token blindness) trigger identical failure modes across every rebadged assistant using that same underlying engine.
 > * **Trickle-Down Tech & Model Distillation (Open-weight ecosystems)**: Just as luxury-car features (adaptive cruise control, turbochargers, lane assist) eventually become standard in everyday commuter cars, open-weight models (like Google Gemma, Meta Llama, or open-source distilled variants) are distilled or pruned from massive frontier flagship models. You get a surprising amount of flagship reasoning power packed into a lightweight, efficient engine you can actually run inside your own home lab or private datacenter.
 > 
@@ -68,9 +68,9 @@ This module is split into two sections with a natural **mid-module stopping poin
 
 # Module Overview & Objectives
 
-In security and enterprise IT operations, making an operational decision based on hallucinated data can lead to severed network trunks, locked-out domain admins, or active breach exploitation. This module introduces **Grounded Intelligence**: using specialized frontier environments that mathematically constrain LLM output to verified organizational knowledge.
+In security and enterprise IT operations, making an operational decision based on hallucinated data can lead to severed network trunks, locked-out Domain Admins, or active breach exploitation. This module introduces **Grounded Intelligence**: using specialized frontier environments that mathematically constrain LLM output to verified organizational knowledge.
 
-By the end of this module, practitioners will be able to:
+By the end of this module, Practitioners will be able to:
 
 1. **Understand Platform Use-Cases**: Determine with clarity when to use Google Gemini (open-world generation, coding, structured workflows) versus Google NotebookLM (closed-domain source-grounded synthesis).
 2. **Eliminate Hallucinations via NotebookLM**: Ingest complex compliance documents, vendor RFPs, and incident post-mortems into NotebookLM, querying with exact page-level inline citations.
@@ -139,7 +139,7 @@ Beyond simple question-and-answer queries, NotebookLM acts as an on-demand synth
 * **Personalized Language Learning Journey**:
   Ground a notebook against YouTube pronunciation lessons, grammar textbook chapters, and vocabulary audio files, progressively adding new source materials as you advance in fluency so your study assistant remains tailored strictly to your current curriculum.
 * **Workplace "Soft Escalation" Runbook**:
-  Load your internal team standard operating procedures (SOPs), system architecture diagrams, and incident escalation paths so junior engineers and on-call staff have a reliable, zero-guesswork first line of troubleshooting before escalating issues to senior staff.
+  Load your internal team standard operating procedures (SOPs), system architecture diagrams, and incident escalation paths so Junior Engineers and on-call staff have a reliable, zero-guesswork first line of troubleshooting before escalating issues to Senior Staff.
 * **RFPs, Contracts, and SOWs**:
   Drop competing vendor proposals, Statements of Work (SOWs), and cloud service level agreements side-by-side to rapidly audit conflicting uptime guarantees, notification windows, and liability exclusions without reading through hundreds of pages of legal boilerplate.
 * **Certification & Professional Exam Prep**:
@@ -209,7 +209,7 @@ This is where **Custom Gems** in Google Gemini come into play.
 > * **NotebookLM (The Sealed Fuel Tank)**:  
 >   Closed-domain document retrieval with strict inline citations to uploaded text. Cannot execute live tools or perform ungrounded open reasoning. Best for policy audits, contract reviews, and study guides.
 > * **Custom Gems (Custom Cruise Control & Driving Guardrails)**:  
->   Open reasoning engine guided by persistent system instructions. Blends base model knowledge with uploaded reference files (CSVs, SOP runbooks, manager playbooks) and enforces strict output schemas and fallback protocols. Best for help desk triage, runbook execution, and ticket drafting.
+>   Open reasoning engine guided by persistent system instructions. Blends base model knowledge with uploaded reference files (CSVs, SOP runbooks, Manager playbooks) and enforces strict output schemas and fallback protocols. Best for help desk triage, runbook execution, and ticket drafting.
 
 A Gem is a persistent, specialized AI agent built on top of Gemini. Instead of re-typing your role, audience, formatting preferences, and operational rules every time you open a new chat window, a Gem embeds this operational metadata directly into the model's persistent system instructions.
 
@@ -230,10 +230,10 @@ Whether you configure a Gem, a Custom GPT, or a Claude Project, you are configur
 
 ## Why YAML is the Language of Production System Prompts
 
-When junior practitioners build custom agents, they typically write their system instructions as long, rambling paragraphs of conversational English:
+When junior Practitioners build custom agents, they typically write their system instructions as long, rambling paragraphs of conversational English:
 
 > **The Sloppy English Approach (Fragile & Ambiguous)**:  
-> *"You are a helpful IT help desk assistant. Whenever a user gives you a ticket, please look at our SOPs and try to figure out what is wrong. Make sure you are polite to the user and don't use confusing technical jargon. If you need to escalate, find the right team in the contact list and give me their emails. Also remind the technician that they need to verify everything before doing it."*
+> *"You are a helpful IT help desk assistant. Whenever a user gives you a ticket, please look at our SOPs and try to figure out what is wrong. Make sure you are polite to the user and don't use confusing technical jargon. If you need to escalate, find the right team in the contact list and give me their emails. Also remind the Technician that they need to verify everything before doing it."*
 
 While conversational prompts appear to work during simple testing, they quickly break down in production environments:
 
@@ -251,10 +251,10 @@ system_role: "Tier 1.5 Help Desk Technical Mentor & Incident Assistant"
 
 context:
   description: >-
-    Guide Tier 1 technicians through troubleshooting, ground
+    Guide Tier 1 Technicians through troubleshooting, ground
     diagnostics in SOPs, and draft client communications.
   target_audience: "Tier 1 Help Desk Technicians & Support Specialists."
-  operational_stance: "Advisory only. The technician owns verification and execution."
+  operational_stance: "Advisory only. The Technician owns verification and execution."
 
 operational_competencies:
   ticket_triage:
@@ -309,8 +309,8 @@ Define the exact operational archetype and technical stance of the agent. Be spe
 
 Specify the target environment, the users interacting with the Gem, and the operational posture:
 
-* **Target Audience**: Are responses written for senior sysadmins, junior help desk staff, or non-technical business users?
-* **Operational Aspects**: Is the Gem an executor who provides ready-to-use output, or an advisory mentor that only provides guidance? In the workplace, setting `operational_stance: "Advisory and Mentorship Only"` establishes that the human technician remains 100% accountable for verifying facts and executing commands.
+* **Target Audience**: Are responses written for Senior Sysadmins, junior Help Desk Staff, or non-technical business users?
+* **Operational Aspects**: Is the Gem an executor who provides ready-to-use output, or an advisory mentor that only provides guidance? In the workplace, setting `operational_stance: "Advisory and Mentorship Only"` establishes that the human Technician remains 100% accountable for verifying facts and executing commands.
 
 ### 3. Operational Competencies (`operational_competencies`)
 
@@ -344,8 +344,8 @@ While this structured YAML architecture might seem rigid or formulaic at first g
 
 You do not need to sit down and author complex YAML specifications from a blank text editor. Instead, use the model as your shop mentor and heavy lifter:
 
-1. **Dump Your Raw Mess**: Take your team's sprawling 10-page Word document SOP, three chaotic email chains, and your manager's bulleted notes, paste them into a raw Gemini chat session, and prompt:
-   > *"I want to turn these messy notes into a custom Gem for Tier 1 technicians. Help me structure this into a clean YAML system specification with system_role, context, operational_competencies, report_structure, and rules_and_fallbacks."*
+1. **Dump Your Raw Mess**: Take your team's sprawling 10-page Word document SOP, three chaotic email chains, and your Manager's bulleted notes, paste them into a raw Gemini chat session, and prompt:
+   > *"I want to turn these messy notes into a custom Gem for Tier 1 Technicians. Help me structure this into a clean YAML system specification with system_role, context, operational_competencies, report_structure, and rules_and_fallbacks."*
 2. **Stress-Test the Draft**: Paste the generated YAML into a test Gem and feed it your hardest, weirdest, most ambiguous support tickets.
 3. **Iterate on the Failures**: When the Gem makes a mistake (e.g., leaking internal jargon to a customer or guessing a contact), copy the bad output, take it back to your drafting session, and ask:
    > *"The Gem hallucinated a team contact during this edge case. What specific fallback rule or schema adjustment should we add to the YAML to prevent this behavior?"*
@@ -369,7 +369,7 @@ A primary strength of custom Gems is the ability to attach reference knowledge f
 
 ### 1. Ingesting Technical Runbooks (`sample_helpdesk_sops.md`)
 
-Help Desk Standard Operating Procedures (SOPs) provide the technical guardrails. When a technician submits a ticket about a VPN error or printer freeze, the Gem cross-references the symptoms against uploaded SOPs (e.g., SOP-101 or SOP-103) and extracts the exact diagnostic checklist for the technician to test before escalating. If you think about higher tiers like Engineering and Architecture, you can even ingest vendor documentation and technical whitepapers to help you rapidly evaluate multiple tools before signing multi-year contracts, as one practical example! 
+Help Desk Standard Operating Procedures (SOPs) provide the technical guardrails. When a Technician submits a ticket about a VPN error or printer freeze, the Gem cross-references the symptoms against uploaded SOPs (e.g., SOP-101 or SOP-103) and extracts the exact diagnostic checklist for the Technician to test before escalating. If you think about higher tiers like Engineering and Architecture, you can even ingest vendor documentation and technical whitepapers to help you rapidly evaluate multiple tools before signing multi-year contracts, as one practical example! 
 
 ### 2. Ingesting Communication Playbooks (`manager_engagement_guide.md`)
 
@@ -381,7 +381,7 @@ Technical competence means nothing if your team communicates abrasively with cli
 
 ### 3. Ingesting Structured Tabular CSVs (`sample_escalation_roster.csv`)
 
-Gems also excel at parsing structured tabular data without requiring SQL databases or Python scripts. By uploading an escalation roster CSV (see [`sample_escalation_roster.csv`](/genai-for-tinkerers/support_docs/sample_escalation_roster.csv)):
+Gems also excel at parsing structured tabular data without requiring SQL databases or Python scripts. By uploading an escalation roster CSV (see [`sample_escalation_roster.csv`](/genai-for-tinkerers/labs/module2/sample_escalation_roster.csv)):
 
 | Department | Escalation Team | Primary Contact | Escalation Email | SLA Window |
 |---|---|---|---|---|
@@ -400,11 +400,11 @@ Let us look at how all these pieces fit together inside a production specificati
 
 ### Configuring the Gem in Gemini
 
-You can review and copy the full production YAML specification directly from [`helpdesk_mentor_gem_template.yaml`](/genai-for-tinkerers/support_docs/helpdesk_mentor_gem_template.yaml).
+You can review and copy the full production YAML specification directly from [`helpdesk_mentor_gem_template.yaml`](/genai-for-tinkerers/labs/module2/helpdesk_mentor_gem_template.yaml).
 
 Below is the configured **Tier 1.5 Help Desk Technical Mentor** inside Google Gemini's Gem Manager interface, with the structured YAML instructions loaded into the Instructions field and the knowledge assets attached:
 
-![Tier 1.5 Help Desk Technical Mentor Gem Configuration](/genai-for-tinkerers/images/helpdesk_mentor_gem_setup.png){: style="display: block; width: 100%; max-width: 650px; margin: 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
+![Tier 1.5 Help Desk Technical Mentor Gem Configuration](/genai-for-tinkerers/images/helpdesk_mentor_gem_setup.webp){: style="display: block; width: 100%; max-width: 650px; margin: 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
 
 ### End-to-End Walkthrough: Processing an Urgent VPN Ticket
 
@@ -420,47 +420,47 @@ When evaluated against the Gem's instructions and uploaded knowledge files, the 
 
 **Output Section 1: Mentor Diagnostic & Action Plan (Internal for Tech)**
 
-![Mentor Diagnostic and Action Plan](/genai-for-tinkerers/images/helpdesk_gem_output_section1.png){: style="display: block; width: 100%; max-width: 700px; margin: 1rem auto 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
+![Mentor Diagnostic and Action Plan](/genai-for-tinkerers/images/helpdesk_gem_output_section1.webp){: style="display: block; width: 100%; max-width: 700px; margin: 1rem auto 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
 
 **Output Section 2: Draft Customer Response (Ready for Tech Review)**
 
-![Draft Customer Response](/genai-for-tinkerers/images/helpdesk_gem_output_section2.png){: style="display: block; width: 100%; max-width: 700px; margin: 1rem auto 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
+![Draft Customer Response](/genai-for-tinkerers/images/helpdesk_gem_output_section2.webp){: style="display: block; width: 100%; max-width: 700px; margin: 1rem auto 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
 
 **Output Section 3: Ticketing System Record**
 
-![Ticketing System Record](/genai-for-tinkerers/images/helpdesk_gem_output_section3.png){: style="display: block; width: 100%; max-width: 700px; margin: 1rem auto 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
+![Ticketing System Record](/genai-for-tinkerers/images/helpdesk_gem_output_section3.webp){: style="display: block; width: 100%; max-width: 700px; margin: 1rem auto 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
 
 **Output Section 4: Mentor Advisory Notice**
 
-![Mentor Advisory Notice](/genai-for-tinkerers/images/helpdesk_gem_output_section4.png){: style="display: block; width: 100%; max-width: 700px; margin: 1rem auto 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
+![Mentor Advisory Notice](/genai-for-tinkerers/images/helpdesk_gem_output_section4.webp){: style="display: block; width: 100%; max-width: 700px; margin: 1rem auto 1.5rem auto; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 255, 170, 0.15);" }
 
 Notice the following triumphs in this actual runtime output:
 
 1. **Grounded SOP Citations**: Notice the `MD` pill badges throughout the output: Gemini explicitly anchors its diagnostic checklist and escalation triggers directly to `sample_helpdesk_sops.md` (SOP-101 Sections 2 & 3).
 2. **Jargon-Free Customer Messaging**: The drafted customer reply opens with empathy, acknowledges Eleanor's critical quarterly report deadline, and explains the situation in clear language without dumping internal RADIUS logs on the user.
 3. **Deterministic Escalation Extraction**: It matched NetOps Engineering from `sample_escalation_roster.csv` and extracted the exact semicolon-delimited contact email string (`netops-tier2@enterprise.org; d.miller@enterprise.org`).
-4. **Mandatory Advisory Notice**: The footer explicitly reinforces that the output is guidance, ensuring human technicians remain accountable for testing and verification.
+4. **Mandatory Advisory Notice**: The footer explicitly reinforces that the output is guidance, ensuring human Technicians remain accountable for testing and verification.
 
 ---
 
 ## Real-World IT & SecOps Practitioner Use Cases for Custom Gems
 
-Because Custom Gems operate inside a conversational web interface rather than an automated API pipeline, their real power lies in **accelerating manual copy-paste workflows**. A practitioner pastes messy raw input from an external system into the Gem, and the Gem cross-references its uploaded reference files to return structured, validated output ready to paste right back into production tools:
+Because Custom Gems operate inside a conversational web interface rather than an automated API pipeline, their real power lies in **accelerating manual copy-paste workflows**. A Practitioner pastes messy raw input from an external system into the Gem, and the Gem cross-references its uploaded reference files to return structured, validated output ready to paste right back into production tools:
 
 * **Tier 1.5 Help Desk & Technical Mentor (Our Primary Case Study)**:
   * *Input*: Technician pastes a confusing user support ticket from Jira or ServiceNow.
   * *Output*: Step-by-step diagnostic checklist from uploaded SOPs, customer reply draft in the Manager's voice, and escalation email strings extracted from the CSV directory.
 * **On-Call Alert Triage & Customer Notification Co-Pilot**:
-  * *Input*: On-call engineer pastes raw JSON alert text or error stack traces received from Datadog, Splunk, or PagerDuty.
+  * *Input*: On-call Engineer pastes raw JSON alert text or error stack traces received from Datadog, Splunk, or PagerDuty.
   * *Output*: Rapid summary of probable root causes mapped against uploaded incident playbooks, followed by a calm, non-technical incident status announcement ready to paste into Slack or a public Statuspage.
 * **Firewall Change Request & ACL Syntax Formatter**:
-  * *Input*: Network admin pastes an unstructured change request email (e.g., *"Need server 10.1.5.20 to reach database 10.2.10.50 on port 5432"*).
-  * *Output*: Cross-references uploaded network zone diagrams and security policies, validates port safety, and outputs exact, copy-pasteable CLI commands (for Cisco, Palo Alto, or Fortinet) for the admin to review and apply.
+  * *Input*: Network Admin pastes an unstructured change request email (e.g., *"Need server 10.1.5.20 to reach database 10.2.10.50 on port 5432"*).
+  * *Output*: Cross-references uploaded network zone diagrams and security policies, validates port safety, and outputs exact, copy-pasteable CLI commands (for Cisco, Palo Alto, or Fortinet) for the Admin to review and apply.
 * **Vendor SOW & Cloud Contract Compliance Reviewer**:
-  * *Input*: Procurement manager pastes clauses from a vendor's draft Statement of Work (SOW) or cloud service level agreement.
+  * *Input*: Procurement Manager pastes clauses from a vendor's draft Statement of Work (SOW) or cloud service level agreement.
   * *Output*: Flags discrepancies against uploaded organizational contract standards (e.g., missing SLA uptime credits, non-standard liability exclusions, or vague termination terms).
 * **Employee Offboarding & Access Audit Checklist**:
-  * *Input*: Systems administrator pastes an HR list of departing employees and their job titles.
+  * *Input*: Systems Administrator pastes an HR list of departing employees and their job titles.
   * *Output*: Cross-references uploaded department access matrices to generate an audit checklist of specific shared mailboxes, VPN certificates, and SaaS licensing pools that require manual revocation.
 
 > [!TIP]
@@ -469,7 +469,7 @@ Because Custom Gems operate inside a conversational web interface rather than an
 > 
 > * **Email Recipient Blocks**: Always require semicolon-delimited lists (`user1@domain.com; user2@domain.com`) so they paste directly into Outlook or Gmail recipient fields without manual comma adjustments.
 > * **Poor Man's OCR**: Use a Gem to extract emails from a screenshot or otherwise grab counts and information when you can't easily copy/paste something. Upload a picture of the list of names, ask the model to extract them into a semicolon-separated list and then paste that into your email. Upload a picture of a network diagram, ask the model to extract the IP addresses and hostnames and return them in a format you can use.
-> * **Ticketing Work Notes**: Separate internal diagnostic work notes from client-facing messages into distinct, bordered blocks so technicians are less likely to accidentally paste internal notes into public customer comment fields.
+> * **Ticketing Work Notes**: Separate internal diagnostic work notes from client-facing messages into distinct, bordered blocks so Technicians are less likely to accidentally paste internal notes into public customer comment fields.
 > * **CLI Command Blocks**: Format suggested commands (like `net stop spooler`) inside standard code blocks with copy buttons to minimize typos during live troubleshooting.
 
 ---
@@ -477,7 +477,7 @@ Because Custom Gems operate inside a conversational web interface rather than an
 ## Production System Hygiene & Field Notes
 
 > [!TIP]
-> **Field Notes from the Server Room Floor**
+> **Notes from the Server Room**
 > 
 > * **Treat System Prompts as Code**: Do not treat system instructions as disposable chat notes. Store your YAML templates in a version-controlled git repository. Track your prompt changes to help identify when changes in underlying models affect behavior.
 > * **Negative Prompts vs. Positive Constraints**: When testing your Gem, if you notice the model doing something undesirable (e.g., generating 5 paragraphs of legal boilerplate when you wanted a one-line summary), do not add `"Do not write long text"`. Instead, redefine the schema: `executive_summary: "Maximum 2 sentences focusing exclusively on business impact."`
@@ -487,14 +487,14 @@ Because Custom Gems operate inside a conversational web interface rather than an
 
 # Hands-On Lab 2B: Build Your Own Custom Production Gem
 
-Now that we have walked through the architecture, grounded citations, and output verification of our reference **Tier 1.5 Help Desk Mentor** (which you can explore in detail inside the [Lab 2B Reference Guide](/genai-for-tinkerers/support_docs/LAB_GUIDE.md)), it is time to build your own.
+Now that we have walked through the architecture, grounded citations, and output verification of our reference **Tier 1.5 Help Desk Mentor** (which you can explore in detail inside the [Lab 2B Reference Guide](/genai-for-tinkerers/labs/module2/)), it is time to build your own.
 
 This lab is your hands-on sandbox to experiment, fail, tune, and deploy a custom Gem tailored to a real problem in your daily work, home lab, academic studies, or personal life.
 
 ## Lab Objectives & Requirements
 
 1. **Select Your Operational Domain**:
-   Identify a specific, repetitive workflow that benefits from grounded context and structured outputs (e.g., a home lab firewall assistant, an on-call alert triage helper, a certification study coach, a personal finance auditor, or an employee onboarding copilot).
+   Identify a specific, repetitive workflow that benefits from grounded context and structured outputs (e.g., a home lab firewall assistant, an on-call alert triage helper, a certification study coach, a Personal Finance Auditor, or an employee onboarding copilot).
 2. **Author a Structured YAML Specification**:
    Using the Five Core Primitives (`system_role`, `context`, `operational_competencies`, `report_structure`, `rules_and_fallbacks`), write a production system prompt. Use concise telegraphic phrasing and positive schemas. (Remember: use Gemini or Claude to help you turn your raw, messy notes into structured YAML).
 3. **Attach Authoritative Knowledge**:
@@ -515,17 +515,17 @@ This lab is your hands-on sandbox to experiment, fail, tune, and deploy a custom
 1. Why is structured YAML significantly more token-efficient and deterministic than conversational English when authoring complex system prompts?
 2. In customer-facing IT support, how does enforcing positive output schemas (such as the Manager's Engagement Guide) protect an organization's reputation compared to unconstrained chat outputs?
 3. When parsing tabular contact directories (like CSV rosters), why are explicit fallback protocols (`if not found, output ESCALATION_TEAM_NOT_FOUND`) far more reliable than negative prompt commands (`do not guess emails`)?
-4. How does the "Advisory Mentorship" operational posture reinforce human accountability and prevent technicians from abdicating critical thinking?
+4. How does the "Advisory Mentorship" operational posture reinforce human accountability and prevent Technicians from abdicating critical thinking?
 
 <div class="module-nav">
   <a href="/genai-for-tinkerers/Module1.html" class="module-nav-link prev">
     <span class="module-nav-label">Previous Module</span>
     <span class="module-nav-title">← Module 1: Foundational GenAI for the Tinkerer</span>
   </a>
-  <div class="module-nav-link next" style="opacity: 0.6; pointer-events: none;">
+  <a href="/genai-for-tinkerers/Module3.html" class="module-nav-link next">
     <span class="module-nav-label">Next Module</span>
-    <span class="module-nav-title">Mod 3 coming soon</span>
-  </div>
+    <span class="module-nav-title">Module 3: Agentic IDEs & AI Pair Programming →</span>
+  </a>
 </div>
 
 </div>

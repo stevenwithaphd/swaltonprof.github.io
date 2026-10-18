@@ -1,0 +1,15 @@
+SECURITY ADVISORY BULLETIN - URGENT
+Date: September 3, 2026
+Source: Enterprise Edge Gateway Vendor
+
+A critical pre-authentication remote code execution vulnerability has been identified 
+in EdgeOS VPN Gateways running firmware prior to v14.2. Unauthenticated remote Attackers 
+can send crafted UDP packets to port 500 to execute arbitrary shell commands with root privileges.
+
+Identifier: CVE-2026-44910
+CVSS v3.1 Base Score: 9.8 (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H)
+Active Exploitation: Yes, active in-the-wild zero-day exploitation observed.
+Affected Components: EdgeOS IPSec VPN Service daemon.
+Workaround: Disable external UDP port 500 access or restrict access to trusted source IP subnets.
+Patch: Upgrade to EdgeOS firmware v14.2-hotfix1 immediately.
+

@@ -1,0 +1,17 @@
+{
+  "name": "swaltonprof.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Asset optimization and static site toolchain for swalton.prof",
+  "scripts": {
+    "optimize-images": "node scripts/optimize-images.mjs",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "sharp": "^0.33.5"
+  }
+}
+
