@@ -25,7 +25,7 @@ Thoughts, architectural teardowns, and field notes from the server room floor an
 ### Published Entries
 
 <div style="margin-top: 15px;">
-  {% assign blog_posts = site.html_pages | where_exp: "item", "item.url contains '/blog/' and item.date" | sort: "date" | reverse %}
+  {% assign blog_posts = site.html_pages | where_exp: "item", "item.date" | where_exp: "item", "item.url contains '/blog/'" | sort: "date" | reverse %}
   {% if blog_posts.size > 0 %}
     {% for post in blog_posts %}
     <div style="margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color);">
