@@ -22,18 +22,47 @@ image: /blog/images/tokyo-night-and-light-banner.webp
 
 <div class="card" markdown="1">
 
-# The Up-Front Summary (For Those Who Do Not Want to Read 14,000 Words)
+# TL;WR ("Too Long, Won't Read"): The Up-Front Summary
 
 This is going to be a long, granular teardown of how I used <a href="https://idx.dev/" target="_blank" rel="noopener noreferrer">Google Antigravity (AGY)</a> as a full-stack travel logistics compiler, bilingual researcher, and rapid-prototyping Engineer for an upcoming three-week trip to Japan with my wife, Chee. Because I am a Tinkerer who cannot leave well enough alone, here is the executive summary up front so you can get the takeaway and bail out whenever you want:
 
 * **The Core Thesis (Protecting Your System 2 Ration)**: In <a href="https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow" target="_blank" rel="noopener noreferrer">Daniel Kahneman's dual-process psychology</a>, humans only get roughly four hours of peak System 2 (slow, analytical, high-effort) cognitive bandwidth per day before mental fatigue sets in. If you burn three of those hours standing on a noisy Shinjuku train platform arguing with five browser tabs, translating Japanese holiday schedules, and figuring out which subway exit does not dump you a kilometer away from your target, you are robbing your vacation of System 1 (fast, effortless, present-in-the-moment) joy. We pre-compiled all the System 2 friction at home so we can spend three weeks in Japan actually existing together.
 * **Bilingual Recon & The Tourist Rating Mirage**: My wife and I dumped a massive, organized list of things we wanted to do into a Google Sheet: rare mountain whisky distilleries, subterranean civil engineering flood temples, Sanrio theme parks, Lolita and Jirai-kei fashion flagships, historic naval ships, and hyper-specific anime pop-up shops. AGY queried official Japanese portals, municipal announcements, Google Maps, and native <a href="https://tabelog.com/" target="_blank" rel="noopener noreferrer">Tabelog (食べログ)</a> in both English and Japanese, cross-referencing tourist hype against harsh local scoring and auditing weekly shop closures (*Teikyūbi* / 定休日).
-* **Life is a CTF (Defeating the "No Japanese Phone Number" & Credit Card Challenges)**: Years ago, I gave a talk at <a href="https://www.cackalackycon.org/" target="_blank" rel="noopener noreferrer">CackalackyCon</a> titled *Life is a CTF*, built around how I gamify complex real-world systems (*Figure, Play, Exploit*): figuring out the exact rules of the game, finding the most optimal path to the objective, and having fun while learning a ton along the way. Modern Japan events and experiences are heavily gated behind advance lotteries, timed entry drops, SMS verification that requires a local phone number, and 3D Secure 2.0 payment gateways. Treating the booking gauntlet like a Capture the Flag competition, AGY mapped 100% official, rule-abiding workarounds: buying a physical convention catalog at an Akihabara bookstore the day before to bypass the ticket line at Tokyo Big Sight, routing around domestic e+ SMS blocks via international allocations, and diagnosing why Chase Visa kept throwing cryptic browser errors on the Shinkansen portal while American Express sailed right through.
+* **Life is a CTF (Defeating the "No Japanese Phone Number" & Credit Card Challenges)**: Earlier this year, I gave a talk at <a href="https://www.cackalackycon.org/" target="_blank" rel="noopener noreferrer">CackalackyCon</a> titled *Life is a CTF*, built around how I gamify complex real-world systems (*Figure, Play, Exploit*): figuring out the exact rules of the game, finding the most optimal path to the objective, and having fun while learning a ton along the way. Modern Japan events and experiences are heavily gated behind advance lotteries, timed entry drops, SMS verification that requires a local phone number, and 3D Secure 2.0 payment gateways. Treating the booking gauntlet like a Capture the Flag competition, AGY mapped 100% official, rule-abiding workarounds: buying a physical convention catalog at an Akihabara bookstore the day before to bypass the ticket line at Tokyo Big Sight, routing around domestic e+ SMS blocks via international allocations, and diagnosing why Chase Visa kept throwing cryptic browser errors on the Shinkansen portal while American Express sailed right through.
 * **Dynamic Schedule Tetris & Parallel Swarms**: When we locked in immovable anchors (the surprise winning of the elusive Suntory Yamazaki Distillery lottery and booking a four-person cask tasting at Gaiaflow Shizuoka), or decided we only needed six to eight hours of sleep so we could leave the hotel earlier and linger longer, AGY refactored the surrounding 21 days on the fly. During our live ticket-booking sprint, I had AGY spin up parallel subagent swarms to update the backend spreadsheets and code in the background while keeping one priority thread live to guide my next purchase. This ensured I wasn't waiting for the AI to churn and could work in parallel alongside AGY to purchase passes and make reservations.
 * **From Spreadsheet to Cloudflare Tunnel to Offline APK**: To review the 149 stops and 264 hour-by-hour rows on our phones away from the home network, AGY recommended me ephemeral <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/" target="_blank" rel="noopener noreferrer">Cloudflare Quick Tunnels (`cloudflared`)</a>. What started as a simple calendar view evolved into a custom Progressive Web App (and eventual standalone Android `.apk`) featuring street-hugging OSRM routing, a local tile-caching proxy to bypass the need for API keys, 19 embedded SVG department store and theme park floor plans, yellow Japanese subway exit badges for underground dead zones, live phone GPS distance pills, and offline Kanji/Kana "Show to Staff / Taxi" cards.
 * **The Human-in-the-Loop Imperative (Why AI is Not Magic)**: AGY is a force multiplier, not an infallible oracle. Left unchecked, it produced a 35-minute time overlap in Ginza, a backward chronological time jump in Kyoto, a non-existent 3:20 PM airport bus, and an overly tight transit window before our farewell Wagyu dinner that my wife and I caught during human review. You still have to trust but verify. This is also aided by this being a return trip, where we know enough to call AGY out on its errors.
 
 If you want the actual war stories, the technical architecture, the anime pilgrimage rabbit holes, and the exact mistakes we caught along the way, grab a coffee (or prep a highball) and read on.
+
+</div>
+
+<div class="card" markdown="1">
+
+# Table of Contents
+
+* [1. The Tinkerer's Impulse: "Huh, Could This Work? Oh Snap, It Does Work!"](#1-the-tinkerers-impulse-huh-could-this-work-oh-snap-it-does-work)
+* [2. Bilingual Recon: Tabelog Cross-Reference, Holiday Dominoes, and Ground Truth](#2-bilingual-recon-tabelog-cross-reference-holiday-dominoes-and-ground-truth)
+  * [Built on Foundations, Not Flippant "One-Shot" Prompts](#built-on-foundations-not-flippant-one-shot-prompts)
+  * [Calibrating for the Tourist Rating Mirage (Google Maps vs. Tabelog)](#calibrating-for-the-tourist-rating-mirage-google-maps-vs-tabelog)
+  * [Auditing "Teikyūbi" (Regular Closures) and the National Holiday Shift](#auditing-teikyūbi-regular-closures-and-the-national-holiday-shift)
+  * [The "Final Night" Anime Pop-Up Jackpot](#the-final-night-anime-pop-up-jackpot)
+* [3. Life is a CTF: Lotteries, SMS Gates, and the Credit Card Boss Fight](#3-life-is-a-ctf-lotteries-sms-gates-and-the-credit-card-boss-fight)
+  * [Boss Fight #1: The "No Japanese Phone Number" SMS Gate](#boss-fight-1-the-no-japanese-phone-number-sms-gate)
+  * [Boss Fight #2: The 3D Secure Credit Card Gauntlet (AmEx vs. Chase Visa)](#boss-fight-2-the-3d-secure-credit-card-gauntlet-amex-vs-chase-visa)
+  * [Boss Fight #3: Language-Gated Tours and "Show to Staff" Rumble Strips](#boss-fight-3-language-gated-tours-and-show-to-staff-rumble-strips)
+* [4. Dynamic Schedule Tetris, Outfit Physics, and Parallel Swarms](#4-dynamic-schedule-tetris-outfit-physics-and-parallel-swarms)
+  * ["We Only Need 6 to 8 Hours in the Hotel: Let's Pad the Ends"](#we-only-need-6-to-8-hours-in-the-hotel-lets-pad-the-ends)
+  * [Outfit Physics & The Laundromat Schedule](#outfit-physics--the-laundromat-schedule)
+  * [Firing Up Subagent Swarms During the Booking Sprint](#firing-up-subagent-swarms-during-the-booking-sprint)
+* [5. The Engineering Stack: OAuth Sheets, Cloudflare Tunnels, and an Offline APK](#5-the-engineering-stack-oauth-sheets-cloudflare-tunnels-and-an-offline-apk)
+  * [1. Respecting the Spouse's Spreadsheet (The OAuth Google Sheets Bridge)](#1-respecting-the-spouses-spreadsheet-the-oauth-google-sheets-bridge)
+  * [2. The Cloudflare Tunnel "Aha!" Moment (And Fixing the Missing Map Tiles)](#2-the-cloudflare-tunnel-aha-moment-and-fixing-the-missing-map-tiles)
+  * [3. Designing for Underground Dead Zones: 19 SVG Floor Plans & Subway Exit Badges](#3-designing-for-underground-dead-zones-19-svg-floor-plans--subway-exit-badges)
+* [6. Keeping the Human in the Loop: Where the AI Stumbled](#6-keeping-the-human-in-the-loop-where-the-ai-stumbled)
+  * [1. The Farewell Wagyu Dinner Pivot (Why Two Models + Two Humans Beat One)](#1-the-farewell-wagyu-dinner-pivot-why-two-models--two-humans-beat-one)
+  * [2. The Final /boost Forensic Audit (15 Bugs Caught Before Minting)](#2-the-final-boost-forensic-audit-15-bugs-caught-before-minting)
+* [7. The Takeaway: Using Tech to Protect the Human Experience](#7-the-takeaway-using-tech-to-protect-the-human-experience)
 
 </div>
 
