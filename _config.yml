@@ -6,3 +6,11 @@ theme: minima
 
 plugins:
   - jekyll-sitemap
+
+exclude:
+  - scripts/
+  - package.json
+  - package-lock.json
+  - node_modules/
+  - .husky/
+  - .lintstagedrc.json

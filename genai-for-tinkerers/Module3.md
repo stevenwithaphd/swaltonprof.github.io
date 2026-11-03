@@ -644,10 +644,10 @@ Submit the following items to verify successful completion:
     <span class="module-nav-label">Previous Module</span>
     <span class="module-nav-title">← Module 2: Grounded GenAI Usage: NotebookLM & Gems</span>
   </a>
-  <div class="module-nav-link next" style="opacity: 0.6; pointer-events: none;">
+  <a href="/genai-for-tinkerers/Module4.html" class="module-nav-link next">
     <span class="module-nav-label">Next Module</span>
-    <span class="module-nav-title">Mod 4 coming soon</span>
-  </div>
+    <span class="module-nav-title">Module 4: Local Open-Weight Inference & Hardware Architecture →</span>
+  </a>
 </div>
 
 </div>

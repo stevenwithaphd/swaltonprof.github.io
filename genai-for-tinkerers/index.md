@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GenAI for Tinkerers Overview
-description: I am one step ahead, well, maybe two. .
+description: I am one step ahead, well, maybe two.
 ---
 
 <div class="content-header">Course Syllabus: GenAI for Tinkerers</div>
@@ -14,7 +14,7 @@ description: I am one step ahead, well, maybe two. .
 
 ### [Module 0: Primer, Practical Use Cases & Dispelling Common Myths](/genai-for-tinkerers/Module0.html)
 
-The practical tinkerer's stance: approach LLMs as untrusted, non-deterministic engines. Grounded in our everyday vehicle metaphor, this primer examines why generative art became a cultural battleground, tracks capability velocity from early video artifacts, breaks down four tactical IT use cases, dispels persistent industry myths (RLHF agreeableness and cloud subpoena realities), and compares frontier cloud vs. local metal inference. Includes hands-on calibration exercises.
+The practical Tinkerer's stance: approach LLMs as untrusted, non-deterministic engines. Grounded in our everyday vehicle metaphor, this primer examines why generative art became a cultural battleground, tracks capability velocity from early video artifacts, breaks down four tactical IT use cases, dispels persistent industry myths (RLHF agreeableness and cloud subpoena realities), and compares frontier cloud vs. local metal inference. Includes hands-on calibration exercises.
 
 </div>
 
@@ -60,7 +60,7 @@ Moving from reactive autocomplete and lots of copy/pasting to autonomous agent l
 <span class="badge badge-indigo">GGUF Quantization & VRAM</span>
 <span class="badge badge-amber">Hands-On Lab</span>
 
-### [Module 4: Local Open-Weight Inference & Hardware Architecture (Coming Soon)](/genai-for-tinkerers/Module4.html)
+### [Module 4: Local Open-Weight Inference & Hardware Architecture](/genai-for-tinkerers/Module4.html)
 
 Taking full control of your inference stack. Profile VRAM math, navigate GGUF quantization, and spin up private OpenAI-compatible REST server endpoints with LM Studio or Ollama.
 
@@ -98,7 +98,7 @@ Constructing persistent memory engines and your own personal GenAI solution to c
 
 ### [Module 7: AI-Augmented Workflows & Automation (Coming Soon)](/genai-for-tinkerers/Module7.html)
 
-Explore ways to turn everything you have created thus far into an agentic agent that can help lighten every day tasks and maybe one day, when you need it,  help you with much more critical tasks.  
+Explore ways to turn everything you have created thus far into an autonomous agent that can help lighten everyday tasks and maybe one day, when you need it, help you with much more critical tasks.
 
 </div>
 

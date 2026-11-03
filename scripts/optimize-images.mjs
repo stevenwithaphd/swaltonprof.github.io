@@ -12,6 +12,7 @@ const projectRoot = path.resolve(__dirname, '..');
 const TARGET_IMAGE_DIRS = [
   path.join(projectRoot, 'genai-for-tinkerers', 'images'),
   path.join(projectRoot, 'soc-fundamentals', 'images'),
+  path.join(projectRoot, 'blog', 'images'),
   path.join(projectRoot, 'assets', 'images'),
 ];
 
@@ -19,6 +20,7 @@ const TARGET_IMAGE_DIRS = [
 const CONTENT_DIRS = [
   path.join(projectRoot, 'genai-for-tinkerers'),
   path.join(projectRoot, 'soc-fundamentals'),
+  path.join(projectRoot, 'blog'),
   projectRoot, // for root README.md, index.md, etc.
 ];
 
@@ -74,7 +76,12 @@ function findContentFiles(dir, files = []) {
 
     if (entry.isDirectory()) {
       // Don't recurse into target content dirs from root to avoid duplicate scans
-      if (dir === projectRoot && (entry.name === 'genai-for-tinkerers' || entry.name === 'soc-fundamentals')) {
+      if (
+        dir === projectRoot &&
+        (entry.name === 'genai-for-tinkerers' ||
+          entry.name === 'soc-fundamentals' ||
+          entry.name === 'blog')
+      ) {
         continue;
       }
       findContentFiles(fullPath, files);
