@@ -157,13 +157,13 @@ To understand why agentic IDEs represent an architectural leap forward, we must 
   * *Mechanism*: The AI model is embedded inside an active execution harness equipped with deterministic tools: file search, file reading, atomic line replacement, terminal command execution, subagent orchestration, and Model Context Protocol (MCP) sidecars.
   * *Form Factors Across the Industry*:
     * **CLI-First Terminal Agents**: [Anthropic Claude Code](https://code.claude.com/docs/en/overview), Antigravity CLI (`agy`), and open-source [Aider](https://aider.chat/) run directly in your shell or SSH sessions, executing commands, editing files, and managing git branches.
-    * **Agentic IDEs**: Antigravity IDE, [Cursor](https://cursor.com/docs), and Windsurf embed multi-file agentic loops, background codebase indexing, and visual diff editors directly into the coding environment.
+    * **Agentic IDEs**: [Google Antigravity IDE](https://antigravity.google/docs), [Cursor](https://cursor.com/docs), and Windsurf embed multi-file agentic loops, background codebase indexing, and visual diff editors directly into the coding environment.
     * **Autonomous Editor Extensions**: [GitHub Copilot Agent Mode](https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-agent-mode) and open-source extensions like Cline and Roo Code bring autonomous loops to standard IDEs.
   * *Capabilities*: Instead of waiting for you to copy and paste text, the agent autonomously reads project files, navigates directory trees, drafts architectural plans, applies modifications across multiple files, executes compiler and test suites in the terminal, analyzes error traces, and self-corrects until the system passes all verification checks.
 
 > [!NOTE]
 > **Course Tooling Focus & Transferable Architecture**
-> This course uses Google Antigravity (the Antigravity IDE and `agy` CLI) as our primary hands-on platform because it provides fully transparent, inspectable local artifacts and session transcripts without corporate gateway restrictions. However, the architectural principles taught here are completely vendor-agnostic. Whether you deploy Antigravity, Anthropic Claude Code, Cursor, or GitHub Copilot Agent Mode, the fundamental mechanics of the OODA loop, planning mode, context window isolation, session telemetry, and deterministic tooling remain identical across platforms.
+> This course uses [Google Antigravity](https://antigravity.google/) (the Antigravity IDE and `agy` CLI) as our primary hands-on platform because it provides fully transparent, inspectable local artifacts and session transcripts without corporate gateway restrictions. However, the architectural principles taught here are completely vendor-agnostic. Whether you deploy Antigravity, Anthropic Claude Code, Cursor, or GitHub Copilot Agent Mode, the fundamental mechanics of the OODA loop, planning mode, context window isolation, session telemetry, and deterministic tooling remain identical across platforms.
 
 > [!WARNING]
 > **The Hazard of Human Fatigue and "Rubber-Stamping"**

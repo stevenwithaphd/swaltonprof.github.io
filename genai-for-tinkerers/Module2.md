@@ -93,7 +93,7 @@ In the common online chatbots, when you ask a technical question, the model draw
 
 * **ChatGPT**: [OpenAI Custom GPTs with Knowledge Files](https://help.openai.com/en/articles/8554397-creating-a-gpt) (with Web Browsing toggled off to enforce closed document retrieval).
 * **Claude**: [Anthropic Claude Projects & Project Knowledge](https://support.anthropic.com/en/articles/9517075-what-are-projects) (uploading reference docs and specifying in project instructions to answer strictly from provided knowledge).
-* **Microsoft Copilot**: [Microsoft Copilot Studio Knowledge Sources](https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-basics) (restricting generative answers strictly to designated SharePoint repositories or uploaded compliance PDFs).
+* **Microsoft Copilot**: [Microsoft Copilot Studio Knowledge Sources](https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-copilot-studio) (restricting generative answers strictly to designated SharePoint repositories or uploaded compliance PDFs).
 
 ### Interactive Inline Citations & Verifiability
 
@@ -477,7 +477,7 @@ Because Custom Gems operate inside a conversational web interface rather than an
 ## Production System Hygiene & Field Notes
 
 > [!TIP]
-> **Notes from the Server Room**
+> **Field Notes from the Server Room Floor**
 > 
 > * **Treat System Prompts as Code**: Do not treat system instructions as disposable chat notes. Store your YAML templates in a version-controlled git repository. Track your prompt changes to help identify when changes in underlying models affect behavior.
 > * **Negative Prompts vs. Positive Constraints**: When testing your Gem, if you notice the model doing something undesirable (e.g., generating 5 paragraphs of legal boilerplate when you wanted a one-line summary), do not add `"Do not write long text"`. Instead, redefine the schema: `executive_summary: "Maximum 2 sentences focusing exclusively on business impact."`
