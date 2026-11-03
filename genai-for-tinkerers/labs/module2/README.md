@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Lab 2B: Building a Production Tier 1.5 Help Desk Mentor Gem"
+permalink: /genai-for-tinkerers/labs/module2/
 ---
 
 # Lab 2B: Building a Production Tier 1.5 Help Desk Mentor Gem

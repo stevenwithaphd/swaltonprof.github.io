@@ -2,6 +2,7 @@
 layout: default
 title: "Lab 3A: Windows Firewall DNS Telemetry Triage Refactoring"
 description: "Hands-on lab refactoring a legacy firewall log triage tool using Antigravity Planning Mode and autonomous verification."
+permalink: /genai-for-tinkerers/labs/module3/lab3a/
 ---
 
 <div class="content-header">Lab 3A: Windows Firewall DNS Telemetry Triage Refactoring</div>

@@ -2,6 +2,7 @@
 layout: default
 title: "Lab 3B: Authoring a Custom SecOps Triage Skill & Subagent Verification"
 description: "Hands-on lab building a modular Antigravity custom skill (SKILL.md), master workspace rules (AGENTS.md), and a deterministic CVE validator script."
+permalink: /genai-for-tinkerers/labs/module3/lab3b/
 ---
 
 <div class="content-header">Lab 3B: Authoring a Custom SecOps Triage Skill & Subagent Verification</div>

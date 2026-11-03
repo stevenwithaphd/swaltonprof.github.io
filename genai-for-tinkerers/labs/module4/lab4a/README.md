@@ -2,6 +2,7 @@
 layout: default
 title: "Lab 4A: The Dyno Bench: LM Studio Visual Sizing, Guardrails & Local Server"
 description: "Hands-on lab setting up LM Studio, profiling hardware offload guardrails, and starting a local OpenAI-compatible REST server."
+permalink: /genai-for-tinkerers/labs/module4/lab4a/
 ---
 
 <div class="content-header">Lab 4A: The Dyno Bench: LM Studio Visual Sizing, Guardrails & Local Server</div>

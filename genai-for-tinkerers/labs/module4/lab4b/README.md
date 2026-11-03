@@ -2,6 +2,7 @@
 layout: default
 title: "Lab 4B: The Service Bay: Ollama CLI Setup & OpenAI-Compatible REST API Scripting"
 description: "Hands-on lab managing Ollama as a headless background daemon and building an automated Python latency and throughput benchmarking script."
+permalink: /genai-for-tinkerers/labs/module4/lab4b/
 ---
 
 <div class="content-header">Lab 4B: The Service Bay: Ollama CLI Setup & OpenAI-Compatible REST API Scripting</div>

@@ -6,6 +6,7 @@ theme: minima
 
 plugins:
   - jekyll-sitemap
+  - jekyll-readme-index
 
 exclude:
   - scripts/
